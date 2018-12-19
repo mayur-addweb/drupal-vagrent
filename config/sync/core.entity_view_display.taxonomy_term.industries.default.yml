@@ -1,0 +1,31 @@
+uuid: 43db5796-9d0d-49f0-90cc-de0d8f2453e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.industries.field_term_icon
+    - taxonomy.vocabulary.industries
+  module:
+    - text
+id: taxonomy_term.industries.default
+targetEntityType: taxonomy_term
+bundle: industries
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_term_icon:
+    type: entity_reference_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden: {  }

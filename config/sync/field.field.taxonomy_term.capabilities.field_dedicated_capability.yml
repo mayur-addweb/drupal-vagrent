@@ -1,0 +1,23 @@
+uuid: ba443f60-1b05-4cc6-9382-716503bae4d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_dedicated_capability
+    - taxonomy.vocabulary.capabilities
+id: taxonomy_term.capabilities.field_dedicated_capability
+field_name: field_dedicated_capability
+entity_type: taxonomy_term
+bundle: capabilities
+label: 'Dedicated Capability'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

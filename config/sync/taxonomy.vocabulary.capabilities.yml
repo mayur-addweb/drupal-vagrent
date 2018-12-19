@@ -1,0 +1,9 @@
+uuid: 964c418f-a701-4acf-8f56-e67058822dbf
+langcode: en
+status: true
+dependencies: {  }
+name: Capabilities
+vid: capabilities
+description: 'To add Capabilities for profile'
+hierarchy: 0
+weight: 0

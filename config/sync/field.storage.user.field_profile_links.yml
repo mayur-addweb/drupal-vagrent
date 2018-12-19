@@ -1,0 +1,19 @@
+uuid: 03163115-c6f9-4aa4-a139-5f041f4e3d93
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - user
+id: user.field_profile_links
+field_name: field_profile_links
+entity_type: user
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,9 @@
+uuid: 2572c050-e55f-41b4-833f-fb52f806cbc8
+langcode: en
+status: true
+dependencies: {  }
+name: Industries
+vid: industries
+description: 'To add Industries list for profile'
+hierarchy: 0
+weight: 0

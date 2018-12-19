@@ -1,0 +1,23 @@
+uuid: f0a5c37e-f22f-40b8-aea4-e4ac6d176828
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_links
+  module:
+    - link
+    - user
+id: user.user.field_profile_links
+field_name: field_profile_links
+entity_type: user
+bundle: user
+label: 'Profile Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

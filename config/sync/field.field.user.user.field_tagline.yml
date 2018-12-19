@@ -1,0 +1,20 @@
+uuid: ad23416f-0f7e-423b-96f6-8ada115cffd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_tagline
+  module:
+    - user
+id: user.user.field_tagline
+field_name: field_tagline
+entity_type: user
+bundle: user
+label: TagLine
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

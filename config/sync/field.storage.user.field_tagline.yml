@@ -1,0 +1,21 @@
+uuid: b68c9d7d-0e8a-4d6b-a23e-54ef2ab8e411
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_tagline
+field_name: field_tagline
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
