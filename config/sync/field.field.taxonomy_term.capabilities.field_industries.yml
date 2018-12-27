@@ -1,0 +1,29 @@
+uuid: d451237f-6c0a-49e4-8a57-05048a90f649
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_industries
+    - taxonomy.vocabulary.capabilities
+    - taxonomy.vocabulary.industries
+id: taxonomy_term.capabilities.field_industries
+field_name: field_industries
+entity_type: taxonomy_term
+bundle: capabilities
+label: Industries
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      industries: industries
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
