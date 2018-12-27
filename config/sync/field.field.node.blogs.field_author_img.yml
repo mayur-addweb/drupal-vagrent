@@ -1,17 +1,17 @@
-uuid: f2ba9c39-cdc1-4420-a3df-59fb9273fcf6
+uuid: c242b45b-363c-47cb-b48e-9f92db3b700f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_blog_image
+    - field.storage.node.field_author_img
     - node.type.blogs
   module:
     - image
-id: node.blogs.field_blog_image
-field_name: field_blog_image
+id: node.blogs.field_author_img
+field_name: field_author_img
 entity_type: node
 bundle: blogs
-label: 'Blog Image'
+label: 'Author Image'
 description: ''
 required: false
 translatable: false

@@ -28,6 +28,7 @@ hidden:
   field_bold_line_1: true
   field_bold_line_2: true
   field_company_name: true
+  field_description: true
   field_full_name: true
   field_position: true
   field_small_: true

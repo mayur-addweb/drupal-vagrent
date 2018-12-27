@@ -22,7 +22,7 @@ class Pages extends Component {
         <Portfolio />
         <Capabilities />
         <Testimonial />
-        <Blob />
+        <Blog />
         <Footer />
         <Subfooter />
       </div>

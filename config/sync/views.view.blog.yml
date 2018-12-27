@@ -4,13 +4,14 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - field.storage.node.field_author_image
+    - field.storage.node.field_author_img
     - field.storage.node.field_blog_author
     - field.storage.node.field_blog_date
     - field.storage.node.field_blog_image
     - node.type.blogs
   module:
     - datetime
+    - image
     - node
     - rest
     - serialization
@@ -88,53 +89,6 @@ display:
           id: title
           table: node_field_data
           field: title
-          entity_type: node
-          entity_field: title
-          label: ''
-          alter:
-            alter_text: false
-            make_link: false
-            absolute: false
-            trim: false
-            word_boundary: false
-            ellipsis: false
-            strip_tags: false
-            html: false
-          hide_empty: false
-          empty_zero: false
-          settings:
-            link_to_entity: true
-          plugin_id: field
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exclude: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_blog_image:
-          id: field_blog_image
-          table: node__field_blog_image
-          field: field_blog_image
           relationship: none
           group_type: group
           admin_label: ''
@@ -158,8 +112,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: true
-            ellipsis: true
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -179,11 +133,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_entity_view
+          click_sort_column: value
+          type: string
           settings:
-            view_mode: default
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -193,6 +147,8 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: node
+          entity_field: title
           plugin_id: field
         body:
           id: body
@@ -274,7 +230,7 @@ display:
             external: false
             replace_spaces: false
             path_case: none
-            trim_whitespace: false
+            trim_whitespace: true
             alt: ''
             rel: ''
             link_class: ''
@@ -288,7 +244,7 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
             preserve_tags: ''
             html: false
@@ -383,10 +339,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_author_image:
-          id: field_author_image
-          table: node__field_author_image
-          field: field_author_image
+        field_author_img:
+          id: field_author_img
+          table: node__field_author_img
+          field: field_author_img
           relationship: none
           group_type: group
           admin_label: ''
@@ -432,10 +388,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_entity_view
+          type: image_url
           settings:
-            view_mode: default
-          group_column: target_id
+            image_style: ''
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -446,10 +402,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_blog_author_1:
-          id: field_blog_author_1
-          table: node__field_blog_author
-          field: field_blog_author
+        field_blog_image:
+          id: field_blog_image
+          table: node__field_blog_image
+          field: field_blog_image
           relationship: none
           group_type: group
           admin_label: ''
@@ -494,75 +450,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
+          click_sort_column: target_id
+          type: image_url
           settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_blog_date_1:
-          id: field_blog_date_1
-          table: node__field_blog_date
-          field: field_blog_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: datetime_default
-          settings:
-            timezone_override: ''
-            format_type: html_date
-          group_column: value
+            image_style: ''
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -627,7 +519,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_author_image'
+        - 'config:field.storage.node.field_author_img'
         - 'config:field.storage.node.field_blog_author'
         - 'config:field.storage.node.field_blog_date'
         - 'config:field.storage.node.field_blog_image'
@@ -667,7 +559,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_author_image'
+        - 'config:field.storage.node.field_author_img'
         - 'config:field.storage.node.field_blog_author'
         - 'config:field.storage.node.field_blog_date'
         - 'config:field.storage.node.field_blog_image'

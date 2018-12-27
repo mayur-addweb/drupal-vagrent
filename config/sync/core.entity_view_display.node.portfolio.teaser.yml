@@ -30,6 +30,7 @@ content:
 hidden:
   field_banner_image: true
   field_industries: true
+  field_industries_tags: true
   field_logo: true
   field_tags: true
   field_technologies: true

@@ -12,6 +12,7 @@ class Blog extends Component {
     }
     axios.get(config.my_api + '/blog/rest?_format=json').then((res) => {
       this.setState({blog_data: res.data});
+      console.log(this.state.blog_data);
   
     }).catch((error) => {
       console.log(error);
@@ -32,18 +33,17 @@ class Blog extends Component {
           <div class=" col-md-4">
             <div class="card">
               <div class="view overlay img-effect img-wave">
-                <img src={sample['field_blog_image']} class="img-fluid" alt="" />
+                <img src={config.my_api + sample['field_blog_image']} class="img-fluid" alt="" />
               </div>
               <div class="card-body">
                 <h4 class="card-title">{sample['title']}</h4>
                 <div class="auth-info center-wrapper">
-                  <img src={sample['field_auther_image']} class="auth-img" />
-                  <div class="auth-name">{sample['field_blog_auther']}</div>
+                  <img src={config.my_api + sample['field_author_img']} class="auth-img" />
+                  <div class="auth-name">{sample['field_blog_author']}</div>
                 </div>
                 <div class="publish-info">
                   <span>{sample['field_blog_date']}</span>
                   <span class="one-dot"></span>
-                  <span>5 min read</span>
                   <span></span>
                 </div>
               </div>

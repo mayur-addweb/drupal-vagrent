@@ -1,4 +1,4 @@
-uuid: c8c23ab1-8793-4ec8-8df5-2eb8a561b9f3
+uuid: cbeb4e7b-42b5-4535-b1ae-317072711cab
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - file
     - image
     - node
-id: node.field_blog_image
-field_name: field_blog_image
+id: node.field_author_img
+field_name: field_author_img
 entity_type: node
 type: image
 settings:
