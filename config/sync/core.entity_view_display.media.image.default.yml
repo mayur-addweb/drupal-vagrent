@@ -18,9 +18,8 @@ content:
     label: visually_hidden
     settings:
       image_style: ''
-      image_link: file
     third_party_settings: {  }
-    type: image
+    type: image_url
     weight: 1
     region: content
 hidden:

@@ -5,6 +5,9 @@ dependencies:
   config:
     - field.field.taxonomy_term.capabilities.field_capabilities_icon
     - field.field.taxonomy_term.capabilities.field_dedicated_capability
+    - field.field.taxonomy_term.capabilities.field_description
+    - field.field.taxonomy_term.capabilities.field_industries
+    - field.field.taxonomy_term.capabilities.field_tag
     - taxonomy.vocabulary.capabilities
   module:
     - path
@@ -36,6 +39,32 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_description:
+    weight: 34
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_industries:
+    weight: 35
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_tag:
+    weight: 36
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   name:
     type: string_textfield

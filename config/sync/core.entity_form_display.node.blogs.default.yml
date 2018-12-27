@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.blogs.body
+    - field.field.node.blogs.field_author_ima
     - field.field.node.blogs.field_blog_author
     - field.field.node.blogs.field_blog_date
     - field.field.node.blogs.field_blog_image
@@ -32,6 +33,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_author_ima:
+    weight: 125
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_blog_author:
     weight: 123
     settings:
