@@ -7,6 +7,7 @@ import Portfolio from '../screens/dashboard/Portfolio/Portfolio';
 import Testimonial from '../screens/dashboard/Testimonial/Testimonial';
 import Footer from '../screens/dashboard/footer/footer';
 import Subfooter from '../screens/dashboard/footer/subfooter'
+import Blog from '../screens/dashboard/Blog/Blog'
 
 
 
@@ -21,6 +22,7 @@ class Pages extends Component {
         <Portfolio />
         <Capabilities />
         <Testimonial />
+        <Blob />
         <Footer />
         <Subfooter />
       </div>
