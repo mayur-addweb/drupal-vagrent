@@ -27,27 +27,44 @@ class Capabilities extends Component {
     return (
       <section class="capailities-wrap text-center" id="capabilities">
           <h2 class="main-heading">CAPABILITIES</h2>
-          <div class="logo-slider  bg-sky-blue">
-          
-            
-            <OwlCarousel className="owl-carousel owl-theme"
-            loop = {1}
-            margin={10}
-            items={5}
-            nav
-            nestedItemSelector="true" 
-            >
+          <div class="bg-sky-blue">
+            <div class="container">
+              <div class="logo-slider">
               { 
               this.state.capabilities_data.map((sample,idx) => {
                 return(
-                <div class="owl-item">
-                  <i key ={idx} class={sample['field_capabilities_icon']} aria-hidden="true" data-toggle="modal" data-target="#ModalLogo"></i>
-                </div>
+                  <div>
+                  <i key ={idx} class={sample['field_capabilities_icon']} aria-hidden="true" data-toggle="modal" data-target={'#capabilities' + sample['tid']}></i>
+                  <div class="modal fade popup-modal" id={'capabilities' + sample['tid']} tabindex="-1" role="dialog" aria-labelledby="ModalPortfolio" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="row">
+                          <div class="col-md-10">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">{sample['name']}</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>{sample['field_description']}</p>
+                              <h3>Technologies used : </h3>
+                              <p>{sample['field_tags']}</p>
+                              <h3>Portfolio : </h3>
+                              <p>{sample['field_industries']}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
                 )
               })
             }
-            </OwlCarousel>
+            </div>
           </div>
+        </div>
       </section>
     );
   }
