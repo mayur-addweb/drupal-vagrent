@@ -10,7 +10,7 @@ class Portfolio extends Component {
       portfolio_data: [],
       base_url: config.my_api
     }
-    axios.get(config.my_api + 'portfolio/rest?_format=json').then((res) => {
+    axios.get(config.my_api + '/portfolio/rest?_format=json').then((res) => {
       this.setState({portfolio_data: res.data});
   
     }).catch((error) => {
