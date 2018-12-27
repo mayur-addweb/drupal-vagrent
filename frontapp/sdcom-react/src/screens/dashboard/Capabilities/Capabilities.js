@@ -14,7 +14,7 @@ class Capabilities extends Component {
       capabilities_data: [],
       base_url: config.my_api
     }
-    axios.get(config.my_api + 'capabilities/rest?_format=json').then((res) => {
+    axios.get(config.my_api + '/capabilities/rest?_format=json').then((res) => {
       this.setState({capabilities_data: res.data});
   
     }).catch((error) => {
