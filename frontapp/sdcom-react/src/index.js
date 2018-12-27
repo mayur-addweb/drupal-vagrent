@@ -18,8 +18,8 @@ import './vendor/bootstrap/css/bootstrap.min.css';
 ReactDOM.render(
 
     <Router history={browserHistory}>
-        <Route path="/" component={login} />
-        <Route path="/home" component={home} />
+        <Route path="/login" component={login} />
+        <Route path="/" component={home} />
     </Router>,
     document.getElementById('root')
 );
