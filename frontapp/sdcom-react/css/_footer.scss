@@ -1,0 +1,27 @@
+/* --------------------------------------------------
+  Footer Style
+-------------------------------------------------- */
+// owl-dots
+.owl-theme {
+  .owl-dots {
+    .owl-dot {
+      span {
+        height: 4px;
+        width: 20px;
+        background: $sky-blue;
+        @include prefix(border-radius, 0);
+        &:hover,
+        &:focus {
+          background: $sky-blue;
+          outline: none;
+        }
+      }
+      &.active {
+        span {
+          height: 8px;
+          background: $blue;
+        }
+      }
+    }
+  }
+}

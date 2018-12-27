@@ -1,0 +1,38 @@
+/* --------------------------------------------------
+ Header Style
+-------------------------------------------------- */
+.navbar {
+  right: 0;
+  box-shadow: none;
+  padding: 0;
+}
+.sd-navbar {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  ul {
+    padding: 20px 0;
+  }
+  .navbar-light {
+    .navbar-nav {
+      .nav-link {
+        @extend .blue;
+        font-weight: bold;
+      }
+      .active {
+        background-color: $blue;
+        a {
+          color: $white !important;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.fixed-header {
+  position: fixed;
+  display: inline-block;
+  width: 100%;
+  background-color: $white;
+}

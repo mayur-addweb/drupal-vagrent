@@ -1,0 +1,41 @@
+.main-heading {
+  @extend .bold;
+  position: relative;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+  font-size: 38px;
+  line-height: 49px;
+  text-align: center;
+  &::after {
+    display: block;
+    height: 3px;
+    max-width: 100px;
+    width: 100%;
+    margin: 10px auto 0;
+    background-color: $blue;
+    content: '';
+  }
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    height: 10px;
+    width: 20px;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    background-color: #2264FF;
+    content: '';
+    transform: translateX(-50%);
+  }
+}
+
+.bg-blue {
+  .main-heading {
+    &::after,
+    &::before {
+      background-color: $white !important;
+    }
+  }
+}
+

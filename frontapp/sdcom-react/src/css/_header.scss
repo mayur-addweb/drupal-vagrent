@@ -1,0 +1,51 @@
+/* --------------------------------------------------
+ Header Style
+-------------------------------------------------- */
+.navbar {
+  right: 0;
+  padding: 0;
+  box-shadow: none;
+  @media only screen and (max-width: 992px) {
+    padding: 10px 0;
+    button {
+      background-color: $blue;
+      .navbar-toggler-icon {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
+.sd-navbar {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  top: 0;
+  left: 0;
+  @media only screen and (max-width: 992px) {
+    background-color: $white;
+    ul {
+      li {
+        margin-left: 0 !important;
+        padding-left: 0;
+      }
+    }
+  }
+  ul {
+    padding: 20px 0;
+  }
+  .navbar-light {
+    .navbar-nav {
+      .nav-link {
+        @extend .blue;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.fixed-header {
+  position: fixed;
+  display: inline-block;
+  width: 100%;
+  background-color: $white;
+}

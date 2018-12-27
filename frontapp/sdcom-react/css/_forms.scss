@@ -1,0 +1,25 @@
+/* --------------------------------------------------
+  Form styling
+-------------------------------------------------- */
+
+.contact-us {
+  form {
+    display: block;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 40px;
+    .form-control {
+      background-image: none;
+    }
+    .btn {
+      margin: 20px 0 0;
+      padding: 8px 35px;
+      border-color: #2264FF;
+      background-color: #2264FF;
+      color: $white;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 4px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+body {
+  color: $dark-grey;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.blue {
+  color: $blue;
+}
+.bg-blue {
+  background-color: $blue;
+  color: $white;
+}
+
+.bg-sky-blue {
+  background-color: $sky-blue;
+}
+.bold {
+  font-weight: bold;
+}
+
+.grey {
+  color: $grey;
+}
+
+.center-wrapper {
+  display: flex;
+  align-items: center;
+}
+.rounded-circle {
+  img {
+    max-width: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+}
+section {
+  margin: 70px 0;
+}

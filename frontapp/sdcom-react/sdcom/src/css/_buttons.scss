@@ -1,0 +1,27 @@
+/* --------------------------------------------------
+  Buttons styling
+-------------------------------------------------- */
+
+/*.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  background-image: none;
+  font-size: 14px;
+  text-align: center;
+  &.btn-lg {
+    padding: 20px 40px;
+    font-size: 24px;
+  }
+}*/
+
+
+.btn {
+  margin: 20px 0 0;
+  padding: 8px 35px;
+  border-color: $blue !important;
+  background-color: $blue !important;
+  color: $white !important;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
