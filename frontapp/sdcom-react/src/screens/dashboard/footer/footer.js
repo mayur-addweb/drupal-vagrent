@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../../config/config';
 import axios from 'axios';
 
 class footer extends Component {
@@ -20,7 +21,7 @@ class footer extends Component {
     }
 
     handleSubmit = event => {
-        axios.get('http://rest_drupal.weblocal.test/session/token').then((res) => {
+        axios.get(config.my_api + '/session/token').then((res) => {
           console.log(res);
             this.setState({token:res.data})
             if(this.state.token != '') {
@@ -36,11 +37,7 @@ class footer extends Component {
     submission = (token) => {
         axios({
           method: 'post',
-          url: 'http://rest_drupal.weblocal.test/webform_rest/submit?_format=json',
-          headers: { 
-            'content-type': 'application/x-www-form-urlencoded',
-            'X-CSRF-Token': token
-         },
+          url: config.my_api + '/webform_rest/submit?_format=json',
           data: {
             webform_id: "contact",
             name: this.state.email,

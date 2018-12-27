@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../../config/config';
 import axios from 'axios';
 
 class Portfolio extends Component {
@@ -7,9 +8,9 @@ class Portfolio extends Component {
     super(props)
     this.state ={
       portfolio_data: [],
-      base_url: 'http://sdcom.weblocal.test/'
+      base_url: config.my_api
     }
-    axios.get('http://sdcom.weblocal.test/portfolio/rest?_format=json').then((res) => {
+    axios.get(config.my_api + 'portfolio/rest?_format=json').then((res) => {
       this.setState({portfolio_data: res.data});
   
     }).catch((error) => {
@@ -28,7 +29,7 @@ class Portfolio extends Component {
       this.state.portfolio_data.map(sample => (
         <div class="col-md-4">
         <div class="card card-body mb-4 text-center" data-toggle="modal" data-target={'#portfolio' + sample['nid']}>
-          <img src={'http://sdcom.weblocal.test/' +  sample['field_banner_image']} />
+          <img src={config.my_api + sample['field_banner_image']} />
           <div class="body-wrap">
             <h4 class="card-title">{sample['title']}</h4>
             <p class="card-text">{sample['body']}</p>
@@ -40,7 +41,7 @@ class Portfolio extends Component {
               <div class="row">
                 <div class="col-md-2">
                   <div class="icon-popup">
-                    <img src={'http://sdcom.weblocal.test/' +  sample['field_banner_image']} />
+                    <img src={config.my_api + sample['field_banner_image']} />
                   </div>
                 </div> 
                 <div class="col-md-10">

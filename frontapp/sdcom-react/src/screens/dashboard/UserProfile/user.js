@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import sir from '../../../images/img.png';
+import config from '../../config/config';
 import axios from 'axios';
 
 
@@ -22,7 +22,7 @@ class user extends Component {
 
   componentDidMount (){
     
-    axios.get('http://sdcom.weblocal.test/node/2?_format=json').then((res) => {
+    axios.get(config.my_api + '/node/2?_format=json').then((res) => {
       this.setState({position:res.data.field_position[0]['value']});
       this.setState({name:res.data.field_full_name[0]['value']});
       this.setState({small_quote:res.data.field_small_[0]['value']});

@@ -3,6 +3,7 @@ import  OwlCarousel from  'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import axios from 'axios';
+import config from '../../config/config';
 
 
 class Capabilities extends Component {
@@ -11,9 +12,9 @@ class Capabilities extends Component {
     super(props)
     this.state ={
       capabilities_data: [],
-      base_url: 'http://sdcom.weblocal.test/'
+      base_url: config.my_api
     }
-    axios.get('http://sdcom.weblocal.test/capabilities/rest?_format=json').then((res) => {
+    axios.get(config.my_api + 'capabilities/rest?_format=json').then((res) => {
       this.setState({capabilities_data: res.data});
   
     }).catch((error) => {

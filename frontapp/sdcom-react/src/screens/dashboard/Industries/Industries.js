@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../../config/config';
 import axios from 'axios';
 
 
@@ -8,9 +9,9 @@ class Industries extends Component {
       super(props)
       this.state ={
         industries_data: [],
-        base_url: 'http://sdcom.weblocal.test/'
+        base_url: config.my_api
       }
-      axios.get('http://sdcom.weblocal.test/industries/rest?_format=json').then((res) => {
+      axios.get(config.my_api + '/industries/rest?_format=json').then((res) => {
         this.setState({industries_data: res.data});
         console.log(this.state.industries_data);
     
@@ -30,7 +31,7 @@ class Industries extends Component {
               this.state.industries_data.map(sample => (
             <div class="col-md-3">
               <div class="industries" data-toggle="modal" data-target={'#industries' +sample['tid']}>
-                <img src={'http://sdcom.weblocal.test/' +  sample['field_icon_image']} alt="img" />
+                <img src={config.my_api +  sample['field_icon_image']} alt="img" />
                 <h5>{sample['name']}</h5>                  
               </div>
               <div class="modal fade popup-modal" id={'industries' + sample['tid']} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -39,7 +40,7 @@ class Industries extends Component {
                     <div class="row">
                       <div class="col-md-2">
                         <div class="icon-popup">
-                          <img src={'http://sdcom.weblocal.test/' +  sample['field_icon_image']}   alt="image" />
+                          <img src={config.my_api +  sample['field_icon_image']}   alt="image" />
                         </div>
                       </div> 
                       <div class="col-md-10">

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import myimg from '../../images/img-01.png';
+import config from '../config/config';
 
 import { browserHistory } from 'react-router';
 import axios from 'axios';
@@ -28,7 +29,7 @@ class App extends Component {
   }
 
   handleSubmit = event => {
-    axios.get('http://rest_drupal.weblocal.test/session/token').then((res) => {
+    axios.get(config.my_api + '/session/token').then((res) => {
       console.log(res);
         this.setState({token:res.data})
         if(this.state.token != '') {
@@ -44,7 +45,7 @@ class App extends Component {
   useLogin = (token) => {
     axios({
       method: 'post',
-      url: 'http://rest_drupal.weblocal.test/user/login?_format=json',
+      url: config.my_api +  '/user/login?_format=json',
       headers: { 
         'content-type': 'application/x-www-form-urlencoded',
         'X-CSRF-Token': token
