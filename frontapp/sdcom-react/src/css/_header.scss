@@ -17,10 +17,10 @@
 }
 .sd-navbar {
   position: fixed;
-  z-index: 99;
-  width: 100%;
   top: 0;
   left: 0;
+  z-index: 99;
+  width: 100%;
   @media only screen and (max-width: 992px) {
     background-color: $white;
     ul {
@@ -40,6 +40,10 @@
         font-weight: bold;
       }
     }
+  }
+  .after::after {
+    right: unset !important;
+    left: 10px;
   }
 }
 

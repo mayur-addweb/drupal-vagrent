@@ -3,13 +3,33 @@
 -------------------------------------------------- */
 .navbar {
   right: 0;
-  box-shadow: none;
   padding: 0;
+  box-shadow: none;
+  @media only screen and (max-width: 992px) {
+    padding: 10px 0;
+    button {
+      background-color: $blue;
+      .navbar-toggler-icon {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
 }
 .sd-navbar {
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 99;
   width: 100%;
+  @media only screen and (max-width: 992px) {
+    background-color: $white;
+    ul {
+      li {
+        margin-left: 0 !important;
+        padding-left: 0;
+      }
+    }
+  }
   ul {
     padding: 20px 0;
   }
@@ -19,14 +39,11 @@
         @extend .blue;
         font-weight: bold;
       }
-      .active {
-        background-color: $blue;
-        a {
-          color: $white !important;
-          font-weight: bold;
-        }
-      }
     }
+  }
+  .after::after {
+    right: unset !important;
+    left: 10px;
   }
 }
 

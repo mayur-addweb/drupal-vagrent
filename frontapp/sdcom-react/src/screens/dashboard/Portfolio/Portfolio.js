@@ -35,30 +35,55 @@ class Portfolio extends Component {
             <p class="card-text">{sample['body']}</p>
           </div>
         </div>
-        <div class="modal fade popup-modal" id={'portfolio' + sample['nid']} tabindex="-1" role="dialog" aria-labelledby="ModalPortfolio" aria-hidden="true">
+        <div class="modal fade popup-modal show in" id={'portfolio' + sample['nid']} tabindex="-1" role="dialog" aria-labelledby="ModalPortfolio" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="row">
-                <div class="col-md-2">
-                  <div class="icon-popup">
+                <div class="col-md-12">
+                  <div class="cross-img">
+                    <div class="icon-popup">
+                      <img src={config.my_api + sample['field_logo']} />
+                    </div>
+                    <div class="cross-wrap">
+                      <button type="button" class="close cross-btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  </div> 
+                  <div class="modal-image">
                     <img src={config.my_api + sample['field_banner_image']} />
                   </div>
-                </div> 
-                <div class="col-md-10">
+                  <div class="dots">
+                  </div>          
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{sample['title']}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h2 class="modal-title" id="exampleModalLabel">{sample['title']}</h2>
                   </div>
                   <div class="modal-body">
-                    <p>{sample['body_1']}</p>
-                    <h3>Technologies used : </h3>
-                    <p>{sample['field_tags']}</p>
-                    <h3>Portfolio : </h3>
-                    <p>{sample['field_industries_tags']}</p>
+                    <p>{sample['body']}</p>
+                  <div class="technology-used-wrap">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="line-right">
+                        <h3 className="modal-sub-heading">Technologies: </h3>
+                        <p>{sample['field_tags']}</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="line-right">
+                        <h3 className="modal-sub-heading">Portfolio: </h3>
+                        <p>{sample['field_industries_tags']}</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="line-right">
+                        <h3 className="modal-sub-heading">Industries : </h3>
+                        <p>{sample['field_industries_tags']}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
+                </div>               
+                </div>              
               </div>
             </div>
           </div>

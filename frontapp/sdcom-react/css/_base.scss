@@ -2,6 +2,9 @@ body {
   color: $dark-grey;
   font-size: 16px;
   line-height: 23px;
+  @media only screen and (max-width: 992px) {
+    margin-top: 65px;
+  }
 }
 
 .blue {
@@ -33,6 +36,10 @@ body {
     margin: 0 auto;
     border-radius: 50%;
   }
+}
+
+.box-shadow {
+  @include prefix('box-shadow', rgb(000, 000, 000) 0 3px 34px);
 }
 section {
   margin: 70px 0;
