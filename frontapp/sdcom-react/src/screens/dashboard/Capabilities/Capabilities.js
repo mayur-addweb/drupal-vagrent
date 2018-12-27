@@ -33,7 +33,7 @@ class Capabilities extends Component {
               { 
               this.state.capabilities_data.map((sample,idx) => {
                 return(
-                  <div>
+                  <div class="logo-icon">
                   <i key ={idx} class={sample['field_capabilities_icon']} aria-hidden="true" data-toggle="modal" data-target={'#capabilities' + sample['tid']}></i>
                   <div class="modal fade popup-modal" id={'capabilities' + sample['tid']} tabindex="-1" role="dialog" aria-labelledby="ModalPortfolio" aria-hidden="true">
                     <div class="modal-dialog" role="document">
