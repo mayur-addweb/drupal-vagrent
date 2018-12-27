@@ -27,4 +27,8 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_author_company: true
+  field_author_designation: true
+  field_author_image: true
+  field_author_name: true

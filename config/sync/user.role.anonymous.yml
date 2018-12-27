@@ -9,9 +9,17 @@ label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:
+  - 'access any webform configuration'
   - 'access comments'
   - 'access content'
+  - 'access own webform configuration'
   - 'access site-wide contact form'
+  - 'administer rest resources'
+  - 'restful get webform_rest_elements'
+  - 'restful get webform_rest_submission'
+  - 'restful patch webform_rest_submission'
+  - 'restful post contact_message'
+  - 'restful post webform_rest_submit'
   - 'search content'
   - 'use text format restricted_html'
   - 'view media'

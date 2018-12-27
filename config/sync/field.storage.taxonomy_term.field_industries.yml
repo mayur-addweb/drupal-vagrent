@@ -1,19 +1,18 @@
-uuid: 1561165e-c466-48d7-a348-ce698fe9d3b6
+uuid: db05687e-4cf1-41b9-a764-0cd8f2dc9e80
 langcode: en
 status: true
 dependencies:
   module:
-    - media
     - taxonomy
-id: taxonomy_term.field_term_icon
-field_name: field_term_icon
+id: taxonomy_term.field_industries
+field_name: field_industries
 entity_type: taxonomy_term
 type: entity_reference
 settings:
-  target_type: media
+  target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

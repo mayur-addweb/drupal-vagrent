@@ -1,16 +1,16 @@
-uuid: b2f42d3e-85cd-4e48-8a41-3a2f923fd208
+uuid: 33550c04-883f-47b3-a062-84fb8c3cb499
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_technologies
+    - field.storage.node.field_industries_tags
     - node.type.portfolio
-    - taxonomy.vocabulary.capabilities
-id: node.portfolio.field_technologies
-field_name: field_technologies
+    - taxonomy.vocabulary.industries
+id: node.portfolio.field_industries_tags
+field_name: field_industries_tags
 entity_type: node
 bundle: portfolio
-label: Technologies
+label: Industries
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      capabilities: capabilities
+      industries: industries
     sort:
       field: name
       direction: asc

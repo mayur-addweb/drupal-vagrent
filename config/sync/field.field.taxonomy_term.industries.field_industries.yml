@@ -1,15 +1,14 @@
-uuid: 479b5ca7-7819-49dc-b2e2-e623d1ff41b5
+uuid: 8a7cca71-7e3c-4595-8120-a1ee07082595
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_industries
-    - node.type.portfolio
+    - field.storage.taxonomy_term.field_industries
     - taxonomy.vocabulary.industries
-id: node.portfolio.field_industries
+id: taxonomy_term.industries.field_industries
 field_name: field_industries
-entity_type: node
-bundle: portfolio
+entity_type: taxonomy_term
+bundle: industries
 label: Industries
 description: ''
 required: false

@@ -1,17 +1,27 @@
-uuid: 3e867236-a45e-4434-b85e-4e3238dab98a
+uuid: ed2255c2-fc97-4bc9-bf3a-74dc71d74831
 langcode: en
 status: true
 dependencies:
   module:
-    - media
+    - file
+    - image
     - node
 id: node.field_banner_image
 field_name: field_banner_image
 entity_type: node
-type: entity_reference
+type: image
 settings:
-  target_type: media
-module: core
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
 locked: false
 cardinality: 1
 translatable: true

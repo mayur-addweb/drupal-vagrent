@@ -3,9 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.industries.field_term_icon
+    - field.field.taxonomy_term.industries.field_description
+    - field.field.taxonomy_term.industries.field_icon_image
+    - field.field.taxonomy_term.industries.field_industries
+    - field.field.taxonomy_term.industries.field_tag
     - taxonomy.vocabulary.industries
   module:
+    - image
     - text
 id: taxonomy_term.industries.default
 targetEntityType: taxonomy_term
@@ -19,13 +23,36 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_term_icon:
-    type: entity_reference_entity_view
+  field_description:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_icon_image:
     weight: 1
     label: above
     settings:
-      view_mode: default
-      link: false
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
+    type: image
+    region: content
+  field_industries:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tag:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
 hidden: {  }

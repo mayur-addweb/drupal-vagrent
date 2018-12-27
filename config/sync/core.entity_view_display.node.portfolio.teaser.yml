@@ -27,4 +27,9 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_banner_image: true
+  field_industries: true
+  field_logo: true
+  field_tags: true
+  field_technologies: true

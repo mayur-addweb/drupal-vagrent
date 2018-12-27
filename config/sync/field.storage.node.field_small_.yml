@@ -1,19 +1,20 @@
-uuid: 480d8c3f-5d81-4233-bc15-9fb9fd322c77
+uuid: 37688629-825b-4d4b-aac7-80b61e447caa
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_industries
-field_name: field_industries
+id: node.field_small_
+field_name: field_small_
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: taxonomy_term
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

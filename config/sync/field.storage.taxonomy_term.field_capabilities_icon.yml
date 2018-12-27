@@ -1,0 +1,21 @@
+uuid: ba7979c2-a61e-4af0-91f9-b9f3d1b58617
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_capabilities_icon
+field_name: field_capabilities_icon
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,28 +1,29 @@
-uuid: 4c3a2638-f514-4882-8a3c-83ab23efa892
+uuid: 80942980-c82c-438a-be58-b1e02b434337
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_term_icon
-    - media.type.image
+    - field.storage.taxonomy_term.field_tag
     - taxonomy.vocabulary.industries
-id: taxonomy_term.industries.field_term_icon
-field_name: field_term_icon
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.industries.field_tag
+field_name: field_tag
 entity_type: taxonomy_term
 bundle: industries
-label: 'Industry Icon'
+label: Tag
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      image: image
+      tags: tags
     sort:
-      field: _none
+      field: name
+      direction: asc
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.capabilities.field_capabilities_icon
     - field.field.taxonomy_term.capabilities.field_dedicated_capability
-    - field.field.taxonomy_term.capabilities.field_term_icon
     - taxonomy.vocabulary.capabilities
   module:
     - path
@@ -22,21 +22,20 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_capabilities_icon:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_dedicated_capability:
     weight: 32
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
-    region: content
-  field_term_icon:
-    weight: 31
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   name:
     type: string_textfield

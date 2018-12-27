@@ -1,0 +1,18 @@
+uuid: 043c5382-c294-4dd6-97ee-dda568e4d14b
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_message_rest
+    - serialization
+    - user
+id: contact_message
+plugin_id: contact_message
+granularity: resource
+configuration:
+  methods:
+    - POST
+  formats:
+    - json
+  authentication:
+    - cookie

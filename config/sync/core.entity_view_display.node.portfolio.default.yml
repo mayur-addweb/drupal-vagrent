@@ -5,12 +5,12 @@ dependencies:
   config:
     - field.field.node.portfolio.body
     - field.field.node.portfolio.field_banner_image
-    - field.field.node.portfolio.field_industries
+    - field.field.node.portfolio.field_industries_tags
     - field.field.node.portfolio.field_logo
     - field.field.node.portfolio.field_tags
-    - field.field.node.portfolio.field_technologies
     - node.type.portfolio
   module:
+    - image
     - text
     - user
 id: node.portfolio.default
@@ -26,16 +26,16 @@ content:
     third_party_settings: {  }
     region: content
   field_banner_image:
-    type: entity_reference_entity_view
-    weight: 102
+    weight: 107
     label: above
     settings:
-      view_mode: default
-      link: false
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
+    type: image
     region: content
-  field_industries:
-    weight: 105
+  field_industries_tags:
+    weight: 109
     label: above
     settings:
       link: true
@@ -43,24 +43,16 @@ content:
     type: entity_reference_label
     region: content
   field_logo:
-    type: entity_reference_entity_view
-    weight: 103
+    weight: 108
     label: above
     settings:
-      view_mode: default
-      link: false
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
+    type: image
     region: content
   field_tags:
     weight: 106
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_technologies:
-    weight: 104
     label: above
     settings:
       link: true
