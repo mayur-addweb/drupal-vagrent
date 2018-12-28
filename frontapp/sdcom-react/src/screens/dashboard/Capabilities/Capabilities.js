@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import  OwlCarousel from  'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import Parser from 'html-react-parser';
 import axios from 'axios';
 import config from '../../config/config';
 
@@ -52,9 +53,7 @@ class Capabilities extends Component {
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <p>{sample['field_description']}</p>
-                                <h3 class="modal-sub-heading">Technologies used : </h3>
-                                <p>{sample['field_tag']}</p>
+                                <p>{Parser(sample['field_description'])}</p>
                                 <h3 class="modal-sub-heading">Portfolio : </h3>
                                 <p>{sample['field_industries']}</p>
                               </div>

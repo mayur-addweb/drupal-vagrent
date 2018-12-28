@@ -2,9 +2,26 @@ import React, { Component } from 'react';
 import  OwlCarousel from  'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import Parser from 'html-react-parser';
+import config from '../../config/config';
+import axios from 'axios';
+
 
 class Testimonial extends Component {
 
+  constructor(props){
+    super(props)
+    this.state ={
+      testimonial_data: [],
+      base_url: config.my_api
+    }
+    axios.get(config.my_api + '/testimonial/rest?_format=json').then((res) => {
+      this.setState({testimonial_data: res.data[0]});
+  
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
 
   
   render() {
@@ -13,18 +30,17 @@ return (
   <section class="testimonial-wrap text-center" id="testimonial">
     <div class="container">
     <h2 class="main-heading">TESTIMONIAL</h2>
-
         <div class="item">
           <div class="testimonial">
             <div class="rounded-circle">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" />
+              <img src={config.my_api + this.state.testimonial_data['field_author_img']} />
             </div>
-            <h3>Jenna Doe</h3>
+            <h3>{this.state.testimonial_data['title']}</h3>
             <ul>
-              <li>Manager</li>
-              <li>Spectrum Industries</li>
+              <li>{this.state.testimonial_data['field_author_company']}</li>
+              <li>{this.state.testimonial_data['field_author_designation']}</li>
             </ul>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco lab.</p>
+            <p>{this.state.testimonial_data['body']}</p>
           </div>
         </div>
     </div>
