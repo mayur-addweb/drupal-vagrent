@@ -27,7 +27,7 @@ class Portfolio extends Component {
     <div class="row">
     { 
       this.state.portfolio_data.map(sample => (
-        <div class="col-md-4">
+        <div class="col-md-6 col-lg-4 col-xs-12">
         <div class="card card-body mb-4 text-center" data-toggle="modal" data-target={'#portfolio' + sample['nid']}>
           <img src={config.my_api + sample['field_banner_image']} />
           <div class="body-wrap">
@@ -59,7 +59,7 @@ class Portfolio extends Component {
                     <h2 class="modal-title" id="exampleModalLabel">{sample['title']}</h2>
                   </div>
                   <div class="modal-body">
-                    <p>{sample['body']}</p>
+                    <p>{sample['body_1']}</p>
                   <div class="technology-used-wrap">
                   <div class="row">
                     <div class="col-md-4">

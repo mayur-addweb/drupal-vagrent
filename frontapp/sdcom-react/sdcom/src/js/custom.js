@@ -1,5 +1,6 @@
 /* careousel slider */
 $(document).ready(function() {
+  
     $('.testimonial-slider').owlCarousel({
       loop:true,
       margin:10,

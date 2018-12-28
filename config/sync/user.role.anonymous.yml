@@ -14,6 +14,7 @@ permissions:
   - 'access content'
   - 'access own webform configuration'
   - 'access site-wide contact form'
+  - 'access user profiles'
   - 'administer rest resources'
   - 'restful get webform_rest_elements'
   - 'restful get webform_rest_submission'

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import config from '../../config/config';
+import Loading from '../Spinner/LoadingSpinner';
 import axios from 'axios';
 
 class footer extends Component {
@@ -10,7 +11,8 @@ class footer extends Component {
           email: "",
           name: "",
           subject: "",
-          description: ""
+          description: "",
+          loading: false,
         };
       }
 
@@ -21,6 +23,7 @@ class footer extends Component {
     }
 
     handleSubmit = event => {
+      this.setState({ loading: true }, () => {
         axios.get(config.my_api + '/session/token').then((res) => {
           console.log(res);
             this.setState({token:res.data})
@@ -31,6 +34,7 @@ class footer extends Component {
         }).catch((error) => {
           console.log(error);
         })
+      });
         event.preventDefault();
     }
 
@@ -41,22 +45,26 @@ class footer extends Component {
           data: {
             webform_id: "contact",
             name: this.state.email,
-            subject: this.state.password,
+            subject: this.state.subject,
             email: this.state.email,
             message: this.state.description
           }
-        }).then((responseEmail) => {
-          
-          console.log(responseEmail);
-
-        });
+        }).then(result => this.setState({
+          loading: false,
+          data: result.data,
+        }));
     }
 
   render() {
+
+    const loader = this.state.loading;
+
     return (
+
+      
         <div class="contact-us bg-blue text-center" id="connect">
         <div class="container-fluid">
-          <div class="row center-wrapper">
+          <div class="row center-wrapper after-right">
             <div class="col-md-7">
               <div class="left-connect">
                 <form onSubmit={this.handleSubmit}>
@@ -74,9 +82,10 @@ class footer extends Component {
                   </div>
                     <button type="submit" class="btn btn-primary">SUBMIT</button>
                 </form>
+                  {loader ? (<Loading />) : null}                  
               </div>
             </div>
-            <div class="col-md-5 after">
+            <div class="col-md-5 before-bottom">
               <div class="right-connect">
                 <h2 class="main-heading">LET'S CONNECT</h2>
                 <div class="icon-wrap">

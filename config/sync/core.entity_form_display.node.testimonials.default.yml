@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.testimonials.body
     - field.field.node.testimonials.field_author_company
     - field.field.node.testimonials.field_author_designation
-    - field.field.node.testimonials.field_author_image
+    - field.field.node.testimonials.field_author_img
     - field.field.node.testimonials.field_author_name
+    - image.style.thumbnail
     - node.type.testimonials
   module:
+    - image
     - path
     - text
 id: node.testimonials.default
@@ -48,14 +50,13 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_author_image:
+  field_author_img:
     weight: 125
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: image_image
     region: content
   field_author_name:
     weight: 122
