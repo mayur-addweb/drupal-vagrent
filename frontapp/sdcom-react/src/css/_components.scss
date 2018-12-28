@@ -106,8 +106,8 @@
     .modal-content {
       margin-top: 80px;
       .modal-header {
-        border-bottom: none !important;
         padding-bottom: 0;
+        border-bottom: none !important;
         button {
           span {
             padding: 5px 10px;
@@ -307,6 +307,9 @@
       .body-wrap {
         display: inline-block;
         padding: 15px;
+        h4 {
+          font-weight: bold;
+        }
       }
     }
     .col-lg-4:nth-child(2n + 1) {
@@ -390,6 +393,10 @@
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
+  h3 {
+    font-weight: bold;
+    padding: 10px 0;
+  }
   ul {
     display: inline-block;
     width: 100%;
@@ -515,11 +522,17 @@
 .blog-slider {
   .card {
     .card-body {
+      cursor: pointer;
       .card-title {
         font-size: 22px;
         font-weight: bold;
       }
+      a {
+        color: $black;
+        text-decoration: none;
+      }
       .auth-info {
+        padding: 10px 0;
         img {
           float: left;
           display: inline-block;
@@ -577,7 +590,7 @@
 }
 /* connect section*/
 .contact-us {
-
+  padding: 0;
   .col-md-7 {
     margin: 0;
     padding: 0;
@@ -640,16 +653,16 @@
     }
   }
   .main-heading {
-    margin-top: 15px;
+    margin-bottom: 20px;
   }
   .connect-url {
     display: inline-block;
     width: 100%;
+    padding: 10px 0;
+    color: $white;
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
-    color: $white;
-    padding: 10px 0;
   }
 }
 
