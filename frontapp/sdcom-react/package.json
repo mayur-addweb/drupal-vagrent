@@ -9,6 +9,7 @@
     "axios": "^0.18.0",
     "bootstrap4": "0.0.1-security",
     "history": "^4.7.2",
+    "html-react-parser": "^0.6.0",
     "i": "^0.3.6",
     "node-sass": "^4.11.0",
     "npm": "^6.5.0",
