@@ -14,6 +14,7 @@ dependencies:
   module:
     - datetime
     - image
+    - link
     - path
     - text
 id: node.blogs.default
@@ -69,10 +70,10 @@ content:
   field_blog_url:
     weight: 128
     settings:
-      size: 60
-      placeholder: ''
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: link_default
     region: content
   path:
     type: path
