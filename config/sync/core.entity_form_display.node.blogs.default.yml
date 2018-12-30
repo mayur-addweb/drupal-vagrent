@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.blogs.field_blog_author
     - field.field.node.blogs.field_blog_date
     - field.field.node.blogs.field_blog_image
+    - field.field.node.blogs.field_blog_url
     - image.style.thumbnail
     - node.type.blogs
   module:
@@ -64,6 +65,14 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_blog_url:
+    weight: 128
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   path:
     type: path

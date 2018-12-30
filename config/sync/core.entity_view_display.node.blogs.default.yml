@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.blogs.field_blog_author
     - field.field.node.blogs.field_blog_date
     - field.field.node.blogs.field_blog_image
+    - field.field.node.blogs.field_blog_url
     - node.type.blogs
   module:
     - datetime
@@ -60,6 +61,14 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
+  field_blog_url:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 100
