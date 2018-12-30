@@ -33,10 +33,10 @@ class Blog extends Component {
           <div class=" col-md-4">
             <div class="card">
               <div class="view overlay img-effect img-wave">
-                <img src={config.my_api + sample['field_blog_image']} class="img-fluid" alt="" />
+              <a href={sample['field_blog_url']}><img src={config.my_api + sample['field_blog_image']} class="img-fluid" alt="" /></a>
               </div>
               <div class="card-body">
-                <h4 class="card-title">{sample['title']}</h4>
+                <a href={sample['field_blog_url']}><h4 class="card-title">{sample['title']}</h4></a>
                 <div class="auth-info center-wrapper">
                   <img src={config.my_api + sample['field_author_img']} class="auth-img" />
                   <div class="auth-name">{sample['field_blog_author']}</div>
