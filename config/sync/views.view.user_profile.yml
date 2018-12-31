@@ -742,7 +742,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: Saurabh
+          value: superadmin
           group: 1
           exposed: false
           expose:
