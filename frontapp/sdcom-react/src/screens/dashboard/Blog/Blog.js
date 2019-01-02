@@ -12,8 +12,6 @@ class Blog extends Component {
     }
     axios.get(config.my_api + '/blog/rest?_format=json').then((res) => {
       this.setState({blog_data: res.data});
-      console.log(this.state.blog_data);
-  
     }).catch((error) => {
       console.log(error);
     })
@@ -22,28 +20,27 @@ class Blog extends Component {
 
   render() {
     return (
-      <section class="blog-wrap carousel slider carousel-multi-item" data-ride="carousel" id="blog">
-      <div class="container">
-        <h2 class="main-heading">BLOGS</h2>
-        <div class="blog-slider">
-          <div class="row">
+      <section className="blog-wrap carousel slider carousel-multi-item" data-ride="carousel" id="blog">
+      <div className="container">
+        <h2 className="main-heading">BLOGS</h2>
+        <div className="blog-slider">
+          <div className="row">
           { 
-            this.state.blog_data.map((sample,idx) => {
+            this.state.blog_data.map((sample,index) => {
               return(
-          <div class=" col-md-4">
-            <div class="card">
-              <div class="view overlay img-effect img-wave">
-              <a href={sample['field_blog_url']}><img src={config.my_api + sample['field_blog_image']} class="img-fluid" alt="" /></a>
+          <div className=" col-md-4" key={index}>
+            <div className="card">
+              <div className="view overlay img-effect img-wave">
+              <a href={sample['field_blog_url']}><img src={config.my_api + sample['field_blog_image']} className="img-fluid" alt="" /></a>
               </div>
-              <div class="card-body">
-                <a href={sample['field_blog_url']}><h4 class="card-title">{sample['title']}</h4></a>
-                <div class="auth-info center-wrapper">
-                  <img src={config.my_api + sample['field_author_img']} class="auth-img" />
-                  <div class="auth-name">{sample['field_blog_author']}</div>
+              <div className="card-body">
+                <a href={sample['field_blog_url']}><h4 className="card-title">{sample['title']}</h4></a>
+                <div className="auth-info center-wrapper">
+                  <img src={config.my_api + sample['field_author_img']} className="auth-img" alt="blog"/>
+                  <div className="auth-name">{sample['field_blog_author']}</div>
                 </div>
-                <div class="publish-info">
+                <div className="publish-info">
                   <span>{sample['field_blog_date']}</span>
-                  <span class="one-dot"></span>
                   <span></span>
                 </div>
               </div>

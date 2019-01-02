@@ -8,7 +8,9 @@
   .cross-btn {
     margin: 15px;
     span {
-      padding: 5px 10px;
+      height: 35px;
+      width: 35px;
+      padding: 3px 13px;
       background-color: $grey;
       color: $white;
       @include prefix('border-radius', 100%);
@@ -110,10 +112,15 @@
         border-bottom: none !important;
         button {
           span {
-            padding: 5px 10px;
+            height: 35px;
+            width: 35px;
+            padding: 3px 13px;
             background-color: $grey;
             color: $white;
             @include prefix('border-radius', 100%);
+          }
+          :focus {
+            outline: none !important;
           }
         }
       }
@@ -240,6 +247,15 @@
     .social-icons {
       bottom: 0;
       display: inline-block;
+      ul {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        li {
+          list-style-type: none;
+          display: inline-block;
+        }
+      }
       a {
         display: inline-block;
         i {
@@ -261,10 +277,10 @@
 /* industries */
 .industries-wrap {
   .industries {
+    cursor: pointer;
     img {
       max-width: 80px;
       margin: 30px;
-      cursor: pointer;
     }
     h5 {
       @extend .blue;
@@ -307,8 +323,11 @@
       .body-wrap {
         display: inline-block;
         padding: 15px;
-        h4 {
+        a {
+          color: $black;
+          font-size: 22px;
           font-weight: bold;
+          text-decoration: none;
         }
       }
     }
@@ -319,6 +338,10 @@
     }
   }
   .popup-modal {
+    .modal-header {
+      padding-top: 0;
+      margin-top: -60px;
+    }
     .modal-dialog {
       width: calc(1060px - 130px);
     }
@@ -368,6 +391,7 @@
     margin: 0 auto;
     text-align: center;
     .line-right {
+      height: 100%;
       border-right: 2px solid $blue;
       @media only screen and (max-width: 767px) {
         border-right: none;
@@ -394,8 +418,8 @@
   margin: 0 auto;
   text-align: center;
   h3 {
-    font-weight: bold;
     padding: 10px 0;
+    font-weight: bold;
   }
   ul {
     display: inline-block;
@@ -470,6 +494,18 @@
       z-index: 99;
     }
   }
+  .portfolio-image-wrap {
+    .card {
+      display: flex;
+      height: 100%;
+      background-color: $sky-blue;
+      flex-wrap: wrap;
+      h4 {
+        @extend .bold;
+        margin: 10px 0;
+      }
+    }
+  }
   .owl-nav {
     .owl-prev {
       margin-left: -75px;
@@ -526,6 +562,8 @@
       .card-title {
         font-size: 22px;
         font-weight: bold;
+        min-height: 72px;
+        display: inline-block;
       }
       a {
         color: $black;
@@ -663,6 +701,9 @@
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
+    @media only screen and (max-width: 992px) {
+      font-size: 18px;
+    }
   }
 }
 

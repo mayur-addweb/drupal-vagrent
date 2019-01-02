@@ -23,6 +23,7 @@
         "drupal/console": "^1.0.2",
         "drupal/contact_message_rest": "^1.0@alpha",
         "drupal/core": "^8.6.0",
+        "drupal/graphql": "^3.0@RC",
         "drupal/link_attributes": "^1.5",
         "drupal/restui": "^1.16",
         "drupal/simple_popup_blocks": "^1.2",

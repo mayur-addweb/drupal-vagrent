@@ -50,6 +50,10 @@ body {
 .box-shadow {
   @include prefix('box-shadow', rgb(000, 000, 000) 0 3px 34px);
 }
+
+span:focus {
+  outline: none;
+}
 section {
   padding: 70px 0;
 }

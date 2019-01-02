@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import  OwlCarousel from  'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
-import Parser from 'html-react-parser';
+// import  OwlCarousel from  'react-owl-carousel';
+// import 'owl.carousel/dist/assets/owl.carousel.css';
+// import 'owl.carousel/dist/assets/owl.theme.default.css';
+// import Parser from 'html-react-parser';
 import config from '../../config/config';
 import axios from 'axios';
 
@@ -27,13 +27,13 @@ class Testimonial extends Component {
   render() {
     
 return (
-  <section class="testimonial-wrap text-center" id="testimonial">
-    <div class="container">
-    <h2 class="main-heading">TESTIMONIAL</h2>
-        <div class="item">
-          <div class="testimonial">
-            <div class="rounded-circle">
-              <img src={config.my_api + this.state.testimonial_data['field_author_img']} />
+  <section className="testimonial-wrap text-center" id="testimonial">
+    <div className="container">
+    <h2 className="main-heading">TESTIMONIAL</h2>
+        <div className="item">
+          <div className="testimonial">
+            <div className="rounded-circle">
+              <img src={config.my_api + this.state.testimonial_data['field_author_img']} alt="testimonial"/>
             </div>
             <h3>{this.state.testimonial_data['title']}</h3>
             <ul>

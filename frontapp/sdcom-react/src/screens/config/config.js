@@ -1,3 +1,3 @@
 export default {
-    my_api: "https://sdcom.addwebprojects.com"
+    my_api: "http://sdcomreact.addwebprojects.com"
 }
