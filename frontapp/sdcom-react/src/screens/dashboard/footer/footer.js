@@ -86,14 +86,14 @@ class footer extends Component {
             </div>
             <div className="col-md-5 before-bottom">
               <div className="right-connect">
-                <h2 className="main-heading">LET'S CONNECT</h2>
+                <h2 className="main-heading">LET'S CONNECT!</h2>
                 <div className="icon-wrap">
-                  <i className="fa fa-linkedin" aria-hidden="true"></i>
-                  <h4>@Loremipsum</h4>
+                  <i className="fa fa-twitter" aria-hidden="true"></i>
+                  <a href="https://twitter.com/sdhariwal" className="connect-url"><h4>Saurbh Dhariwal</h4></a>
                 </div>
                 <div className="icon-wrap">
                   <i className="fa fa-envelope" aria-hidden="true"></i>
-                  <h4>saurabhdhariwal.com@gmail.com</h4>
+                  <a href="mailto://saurabhdhariwal.com@gmail.com" className="connect-url"><h4>saurabhdhariwal.com@gmail.com</h4></a>
                 </div>
               </div>
             </div>
