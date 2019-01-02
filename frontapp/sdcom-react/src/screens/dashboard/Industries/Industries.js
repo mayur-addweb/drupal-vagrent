@@ -13,7 +13,6 @@ class Industries extends Component {
       }
       axios.get(config.my_api + '/industries/rest?_format=json').then((res) => {
         this.setState({industries_data: res.data});   
-        console.log(this.state.industries_data); 
       }).catch((error) => {
         console.log(error);
       })
