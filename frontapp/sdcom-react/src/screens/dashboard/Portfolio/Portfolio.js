@@ -31,7 +31,7 @@ class Portfolio extends Component {
         <div className="card card-body mb-4 text-center" data-toggle="modal" data-target={'#portfolio' + sample['nid']}>
           <img src={config.my_api + sample['field_banner_image']} alt="portfolio"/>
           <div className="body-wrap">
-            <h4 className="card-title">{sample['title']}</h4>
+            <a href={sample['field_portfolio_url']} target='_blank'><h4 className="card-title">{sample['title']}</h4></a>
             <p className="card-text">{sample['body']}</p>
           </div>
         </div>

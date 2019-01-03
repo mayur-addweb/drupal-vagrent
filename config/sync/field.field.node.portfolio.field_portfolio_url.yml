@@ -1,0 +1,23 @@
+uuid: 68f10c0e-a621-4b87-9cbb-6d943d88d043
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_portfolio_url
+    - node.type.portfolio
+  module:
+    - link
+id: node.portfolio.field_portfolio_url
+field_name: field_portfolio_url
+entity_type: node
+bundle: portfolio
+label: 'Portfolio URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

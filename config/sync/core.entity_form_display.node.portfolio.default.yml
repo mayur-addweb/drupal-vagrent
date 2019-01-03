@@ -7,11 +7,13 @@ dependencies:
     - field.field.node.portfolio.field_banner_image
     - field.field.node.portfolio.field_industries_tags
     - field.field.node.portfolio.field_logo
+    - field.field.node.portfolio.field_portfolio_url
     - field.field.node.portfolio.field_tags
     - image.style.thumbnail
     - node.type.portfolio
   module:
     - image
+    - link
     - path
     - text
 id: node.portfolio.default
@@ -58,6 +60,14 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_portfolio_url:
+    weight: 130
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_tags:
     weight: 126

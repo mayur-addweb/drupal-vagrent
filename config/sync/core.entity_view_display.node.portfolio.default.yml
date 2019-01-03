@@ -7,10 +7,12 @@ dependencies:
     - field.field.node.portfolio.field_banner_image
     - field.field.node.portfolio.field_industries_tags
     - field.field.node.portfolio.field_logo
+    - field.field.node.portfolio.field_portfolio_url
     - field.field.node.portfolio.field_tags
     - node.type.portfolio
   module:
     - image
+    - link
     - text
     - user
 id: node.portfolio.default
@@ -50,6 +52,18 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
+  field_portfolio_url:
+    weight: 110
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_tags:
     weight: 106
