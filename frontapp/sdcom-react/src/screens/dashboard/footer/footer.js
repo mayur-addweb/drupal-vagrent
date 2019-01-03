@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import config from '../../config/config';
 import Loading from '../Spinner/LoadingSpinner';
 import axios from 'axios';
+import { ReCaptcha } from 'react-recaptcha-google'
 
 class footer extends Component {
 
     constructor(props) {
         super(props);
+        this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
+        this.verifyCallback = this.verifyCallback.bind(this);
         this.state = {
           email: "",
           name: "",
@@ -15,6 +18,24 @@ class footer extends Component {
           loading: false,
         };
       }
+
+    componentDidMount() {
+        if (this.captchaDemo) {
+            console.log("started, just a second...")
+            this.captchaDemo.reset();
+        }
+    }
+
+  onLoadRecaptcha() {
+      if (this.captchaDemo) {
+          this.captchaDemo.reset();
+      }
+  }
+
+  verifyCallback(recaptchaToken) {
+    // Here you will get the final recaptchaToken!!!  
+    console.log(recaptchaToken, "<= your recaptcha token")
+  }
 
     handleChange = event => {
         this.setState({
@@ -79,7 +100,17 @@ class footer extends Component {
                   <div className="form-group">
                     <textarea className="form-control" id="description" rows="3" placeholder="Description" value={this.state.description} onChange={this.handleChange}></textarea>
                   </div>
+
                     <button type="submit" className="btn btn-primary">SUBMIT</button>
+
+                    <ReCaptcha
+                        ref={(el) => {this.captchaDemo = el;}}
+                        size="visible"
+                        render="explicit"
+                        sitekey="6LeOboYUAAAAABUCnte067huZKgYKD8gpYnIzjEf"
+                        onloadCallback={this.onLoadRecaptcha}
+                        verifyCallback={this.verifyCallback}
+                    />
                 </form>
                   {loader ? (<Loading />) : null}                  
               </div>

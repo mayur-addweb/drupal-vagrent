@@ -21,7 +21,6 @@ class Capabilities extends Component {
     }).catch((error) => {
       console.log(error);
     })
-
   }
 
   render() {
@@ -32,30 +31,41 @@ class Capabilities extends Component {
             <div className="container">
               <div className="logo-slider">
               { 
-              this.state.capabilities_data.map((sample,idx) => {
+              this.state.capabilities_data.map((data,idx) => {
                 return(
                   <div className="logo-icon" key ={idx}>
-                    <i className={sample['field_capabilities_icon']} aria-hidden="true" data-toggle="modal" data-target={'#capabilities' + sample['tid']}></i>
-                    <div className="modal fade popup-modal" id={'capabilities' + sample['tid']} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <i className={data['field_capabilities_icon']} aria-hidden="true" data-toggle="modal" data-target={'#capabilities' + data['tid']}></i>
+                    <div className="modal fade popup-modal" id={'capabilities' + data['tid']} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div className="modal-dialog" role="document">
                         <div className="modal-content">
                           <div className="row">
                             <div className="col-md-2">
                               <div className="icon-popup">
-                                 <i key ={idx} className={sample['field_capabilities_icon']} aria-hidden="true" data-toggle="modal"></i>
+                                 <i key ={idx} className={data['field_capabilities_icon']} aria-hidden="true" data-toggle="modal"></i>
                               </div>
                             </div> 
                             <div className="col-md-10">
                               <div className="modal-header">
-                                <h5 className="modal-title" id="exampleModalLabel">{sample['name']}</h5>
+                                <h5 className="modal-title" id="exampleModalLabel">{data['name']}</h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div className="modal-body">
-                                <p>{Parser(sample['field_description'])}</p>
+                                <p>{Parser(data['field_description'])}</p>
                                 <h3 className="modal-sub-heading">Portfolio : </h3>
-                                <p>{sample['field_industries']}</p>
+                                <div className="portfolio-image-wrap">
+                                  <div className="row">
+                                    <div className="col-lg-6 col-md-6 col-xs-12">
+                                      <div className="card card-body mb-4 text-center">
+                                        {data['field_banner_image'] ? <img src={config.my_api +  data['field_banner_image']} alt="portfolio" /> : null}
+                                        <div className="body-wrap">
+                                          <h4 className="card-title">{data['title']}</h4>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>

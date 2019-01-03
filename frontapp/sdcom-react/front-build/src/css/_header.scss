@@ -38,6 +38,10 @@
       .nav-link {
         @extend .blue;
         font-weight: bold;
+        font-size: 16px;
+      }
+      :hover {
+        color: $blue !important;
       }
     }
   }

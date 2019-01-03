@@ -1,9 +1,18 @@
+/*@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/open-sans/OpenSans-Regular.ttf');
+}
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
   color: $dark-grey;
   font-size: 16px;
   line-height: 23px;
+  font-family: 'Open Sans';
   @media only screen and (max-width: 992px) {
     margin-top: 65px;
+
   }
 }
 
@@ -41,6 +50,10 @@ body {
 .box-shadow {
   @include prefix('box-shadow', rgb(000, 000, 000) 0 3px 34px);
 }
+
+span:focus {
+  outline: none;
+}
 section {
-  margin: 70px 0;
+  padding: 70px 0;
 }

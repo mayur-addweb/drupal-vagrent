@@ -5,10 +5,10 @@ dependencies:
   config:
     - field.field.node.portfolio.body
     - field.field.node.portfolio.field_banner_image
+    - field.field.node.portfolio.field_capabilities
     - field.field.node.portfolio.field_industries_tags
     - field.field.node.portfolio.field_logo
     - field.field.node.portfolio.field_portfolio_url
-    - field.field.node.portfolio.field_tags
     - image.style.thumbnail
     - node.type.portfolio
   module:
@@ -44,6 +44,15 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
+  field_capabilities:
+    weight: 131
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_industries_tags:
     weight: 129
     settings:
@@ -68,15 +77,6 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-    region: content
-  field_tags:
-    weight: 126
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   path:
     type: path

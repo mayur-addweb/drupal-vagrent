@@ -1,19 +1,19 @@
-uuid: e053d73b-09d4-46e4-8e9a-98d0d2b2fe79
+uuid: eff2c14a-f3be-4da8-888e-5618ea92e2e4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
+    - field.storage.node.field_capabilities
     - node.type.portfolio
     - taxonomy.vocabulary.capabilities
-id: node.portfolio.field_tags
-field_name: field_tags
+id: node.portfolio.field_capabilities
+field_name: field_capabilities
 entity_type: node
 bundle: portfolio
-label: Tags
+label: Capabilities
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -25,5 +25,5 @@ settings:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: capabilities
+    auto_create_bundle: ''
 field_type: entity_reference

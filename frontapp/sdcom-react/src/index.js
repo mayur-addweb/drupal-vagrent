@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
-import login from './screens/login/App';
+//import login from './screens/login/App';
 import home from './screens/pages';
 import NotFound from './screens/dashboard/NotFound/NotFound'
 import './index.css';
@@ -17,7 +17,6 @@ import './css/style.scss';
 ReactDOM.render(
 
     <Router history={browserHistory}>
-        <Route path="/login" component={login} />
         <Route path="/" component={home} />
         <Route path="*" component={NotFound} />
     </Router>,
