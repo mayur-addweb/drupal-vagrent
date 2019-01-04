@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 import config from '../../config/config';
 
 class Blog extends Component {
@@ -17,18 +20,28 @@ class Blog extends Component {
     })
 
   }
+  const 
 
   render() {
     return (
       <section className="blog-wrap carousel slider carousel-multi-item" data-ride="carousel" id="blog">
       <div className="container">
         <h2 className="main-heading">BLOGS</h2>
+        <h2 className="vertical-name right">BLOGS</h2>
         <div className="blog-slider">
-          <div className="row">
+          {this.state.blog_data.length > 0 ?
+            <OwlCarousel
+            className="owl-theme"
+            loop
+            margin={15}
+            items={3}
+            nav={true}
+            dots={false}
+            >
           { 
             this.state.blog_data.map((sample,index) => {
               return(
-          <div className=" col-md-4" key={index}>
+          <div className="item" key={index}>
             <div className="card">
               <div className="view overlay img-effect img-wave">
               <a href={sample['field_blog_url']}><img src={config.my_api + sample['field_blog_image']} className="img-fluid" alt="" target='_blank' rel="noopener noreferrer"/></a>
@@ -49,7 +62,7 @@ class Blog extends Component {
               )}
             )
           }
-         </div>
+          </OwlCarousel> : ""}
         </div>
       </div>
     </section>

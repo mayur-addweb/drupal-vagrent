@@ -44,19 +44,9 @@ $(document).ready(function() {
       }
     });
 
-
-  $(".nav-item").click(function() {
-      $('html,body').animate({
-          scrollTop: $("#capabilities").offset().top},
-          'slow');
-  });
-
-
   $(".portfolio-wrap .card-title").click(function(ev) {
      ev.stopPropagation();
   });
-
-
 });
 
 

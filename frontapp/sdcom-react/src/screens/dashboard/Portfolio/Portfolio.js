@@ -24,10 +24,11 @@ class Portfolio extends Component {
 <section className="portfolio-wrap text-center" id="portfolio">
   <div className="container">
     <h2 className="main-heading">PORTFOLIO</h2>
-    <div className="row">
+    <h3 className="vertical-name right">PORTFOLIO</h3>
+    <div className="grid-container">
     { 
       this.state.portfolio_data.map((sample, index) => (
-        <div key={index} className="col-md-6 col-lg-4 col-xs-12">
+        <div key={index} className="grid-item">
         <div className="card card-body mb-4 text-center" data-toggle="modal" data-target={'#portfolio' + sample['nid']}>
           <img src={config.my_api + sample['field_banner_image']} alt="portfolio"/>
           <div className="body-wrap">

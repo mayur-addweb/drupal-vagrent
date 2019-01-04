@@ -20,6 +20,7 @@
     "react-html-converter": "^0.3.2",
     "react-owl-carousel": "^2.3.1",
     "react-owl-carousel2": "^0.3.0",
+    "react-recaptcha": "^2.3.10",
     "react-recaptcha-google": "^1.1.1",
     "react-router": "^3.2.1",
     "react-router-dom": "^4.3.1",

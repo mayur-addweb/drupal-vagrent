@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import  OwlCarousel from  'react-owl-carousel';
-// import 'owl.carousel/dist/assets/owl.carousel.css';
-// import 'owl.carousel/dist/assets/owl.theme.default.css';
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Parser from 'html-react-parser';
 import axios from 'axios';
 import config from '../../config/config';
@@ -30,10 +30,20 @@ class Capabilities extends Component {
           <div className="bg-sky-blue">
             <div className="container">
               <div className="logo-slider">
-              { 
-              this.state.capabilities_data.map((data,idx) => {
+
+              {this.state.capabilities_data.length > 0 ?
+                <OwlCarousel
+                className="owl-theme"
+                loop
+                margin={10}
+                items={5}
+                nav
+                dots={false}
+                >
+              { this.state.capabilities_data.map((data,idx) => {
                 return(
-                  <div className="logo-icon" key ={idx}>
+                  <div className="item" key ={idx}>
+                  <div className="logo-icon">
                     <i className={data['field_capabilities_icon']} aria-hidden="true" data-toggle="modal" data-target={'#capabilities' + data['tid']}></i>
                     <div className="modal fade popup-modal" id={'capabilities' + data['tid']} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div className="modal-dialog" role="document">
@@ -41,7 +51,7 @@ class Capabilities extends Component {
                           <div className="row">
                             <div className="col-md-2">
                               <div className="icon-popup">
-                                 <i key ={idx} className={data['field_capabilities_icon']} aria-hidden="true" data-toggle="modal"></i>
+                                 <i className={data['field_capabilities_icon']} aria-hidden="true" data-toggle="modal"></i>
                               </div>
                             </div> 
                             <div className="col-md-10">
@@ -73,9 +83,11 @@ class Capabilities extends Component {
                       </div>
                     </div>
                   </div>
+                </div>
                 )
               })
             }
+            </OwlCarousel> : ""}
             </div>
           </div>
         </div>

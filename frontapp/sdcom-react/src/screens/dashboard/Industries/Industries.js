@@ -24,6 +24,7 @@ class Industries extends Component {
       <section className="industries-wrap text-center" id="industries">
         <div className="container">
           <h2 className="main-heading">INDUSTRIES</h2>
+          <h2 className="vertical-name left">INDUSTRIES</h2>
           <div className="row">
             { 
               this.state.industries_data.map((data, index) => (

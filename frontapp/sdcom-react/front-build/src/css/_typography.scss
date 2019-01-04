@@ -39,3 +39,15 @@
   }
 }
 
+.vertical-name {
+  position: absolute;
+  top: 50%;
+  color: $sky-blue;
+  font-size: 78px;
+  font-weight: bold;
+  transform: rotate(-90deg) translate(0, -195px);
+  @media only screen and (max-width: 992px) {
+    display: none;
+  }
+}
+

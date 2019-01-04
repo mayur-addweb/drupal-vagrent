@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import config from '../../config/config';
 import Loading from '../Spinner/LoadingSpinner';
 import axios from 'axios';
-import { ReCaptcha } from 'react-recaptcha-google'
+import ReCaptcha from 'react-recaptcha'
 
 class footer extends Component {
 
     constructor(props) {
         super(props);
-        this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
+        this.varify = this.varify.bind(this);
+        this.recaptchaLoaded = this.recaptchaLoaded.bind(this);
         this.verifyCallback = this.verifyCallback.bind(this);
         this.state = {
           email: "",
@@ -16,47 +17,15 @@ class footer extends Component {
           subject: "",
           description: "",
           loading: false,
+          is_varified: false
         };
       }
 
-    componentDidMount() {
-        if (this.captchaDemo) {
-            console.log("started, just a second...")
-            this.captchaDemo.reset();
-        }
-    }
-
-  onLoadRecaptcha() {
-      if (this.captchaDemo) {
-          this.captchaDemo.reset();
-      }
-  }
-
-  verifyCallback(recaptchaToken) {
-    // Here you will get the final recaptchaToken!!!  
-    console.log(recaptchaToken, "<= your recaptcha token")
-  }
 
     handleChange = event => {
         this.setState({
             [event.target.id]: event.target.value
         });
-    }
-
-    handleSubmit = event => {
-      this.setState({ loading: true }, () => {
-        axios.get(config.my_api + '/session/token').then((res) => {
-          console.log(res);
-            this.setState({token:res.data})
-            if(this.state.token !== '') {
-              this.submission(this.state.token);
-              console.log(this.state.token);
-            }
-        }).catch((error) => {
-          console.log(error);
-        })
-      });
-        event.preventDefault();
     }
 
     submission = (token) => {
@@ -76,8 +45,40 @@ class footer extends Component {
         }));
     }
 
-  render() {
+    varify(event) {
+      if(this.state.is_varified) {
+        this.setState({ loading: true }, () => {
+          axios.get(config.my_api + '/session/token').then((res) => {
+            console.log(res);
+              this.setState({token:res.data})
+              if(this.state.token !== '') {
+                this.submission(this.state.token);
+                console.log(this.state.token);
+              }
+          }).catch((error) => {
+            console.log(error);
+          })
+        });
+      }
+      else {
+        alert('varify you are human');
+        event.preventDefault();
+      }
+    }
 
+    recaptchaLoaded() {
+      console.log('captcha is loaded');
+    }
+
+    verifyCallback(response) {
+      if(response) {
+        this.setState ({
+          is_varified: true
+        })
+      }
+    }
+
+  render() {
     const loader = this.state.loading;
 
     return (
@@ -87,7 +88,7 @@ class footer extends Component {
           <div className="row center-wrapper after-right">
             <div className="col-md-7">
               <div className="left-connect">
-                <form onSubmit={this.handleSubmit}>
+                <form>
                   <div className="form-group">
                     <input type="text" className="form-control" id="subject" placeholder="Subject" value={this.state.subject} onChange={this.handleChange} />
                   </div>
@@ -100,17 +101,13 @@ class footer extends Component {
                   <div className="form-group">
                     <textarea className="form-control" id="description" rows="3" placeholder="Description" value={this.state.description} onChange={this.handleChange}></textarea>
                   </div>
-
-                    <button type="submit" className="btn btn-primary">SUBMIT</button>
-
-                    <ReCaptcha
-                        ref={(el) => {this.captchaDemo = el;}}
-                        size="visible"
-                        render="explicit"
-                        sitekey="6LeOboYUAAAAABUCnte067huZKgYKD8gpYnIzjEf"
-                        onloadCallback={this.onLoadRecaptcha}
-                        verifyCallback={this.verifyCallback}
-                    />
+                  <ReCaptcha
+                    sitekey="6LeOboYUAAAAABUCnte067huZKgYKD8gpYnIzjEf"
+                    render="explicit"
+                    onloadCallback={this.recaptchaLoaded}
+                    verifyCallback={this.verifyCallback}
+                  />
+                  <button type="submit" className="btn btn-primary" onClick={this.varify}>SUBMIT</button>
                 </form>
                   {loader ? (<Loading />) : null}                  
               </div>

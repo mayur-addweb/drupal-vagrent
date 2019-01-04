@@ -1,0 +1,10 @@
+body {
+  display: none;
+}
+.not-found {
+  display: inline-block;
+  img {
+    display: inline-block;
+    border-radius: 100%;
+  }
+}
