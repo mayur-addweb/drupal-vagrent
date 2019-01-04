@@ -20,9 +20,27 @@ class Blog extends Component {
     })
 
   }
-  const 
+  
 
   render() {
+
+    const options = {
+      loop: true,
+      margin:10,
+      nav:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          767:{
+              items:2
+          },
+          1000:{
+              items:3
+          }
+      }
+  }
+
     return (
       <section className="blog-wrap carousel slider carousel-multi-item" data-ride="carousel" id="blog">
       <div className="container">
@@ -37,6 +55,7 @@ class Blog extends Component {
             items={3}
             nav={true}
             dots={false}
+            {...options}
             >
           { 
             this.state.blog_data.map((sample,index) => {

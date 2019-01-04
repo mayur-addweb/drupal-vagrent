@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Parser from 'html-react-parser';
 import axios from 'axios';
 import config from '../../config/config';
@@ -45,21 +43,31 @@ class Capabilities extends Component {
                   <div className="item" key ={idx}>
                   <div className="logo-icon">
                     <i className={data['field_capabilities_icon']} aria-hidden="true" data-toggle="modal" data-target={'#capabilities' + data['tid']}></i>
-                    <div className="modal fade popup-modal" id={'capabilities' + data['tid']} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  </div>
+                </div>
+                )
+              })
+            }
+            </OwlCarousel> : ""}            
+            { this.state.capabilities_data.map((data,idx) => {
+              return (
+                      <div key={idx} className="modal fade popup-modal" id={'capabilities' + data['tid']} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div className="modal-dialog" role="document">
                         <div className="modal-content">
+                        <div className="cross-wrap">
+                          <button type="button" className="close cross-btn" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                        </div>
                           <div className="row">
                             <div className="col-md-2">
                               <div className="icon-popup">
-                                 <i className={data['field_capabilities_icon']} aria-hidden="true" data-toggle="modal"></i>
+                                  <i className={data['field_capabilities_icon']} aria-hidden="true" data-toggle="modal"></i>
                               </div>
                             </div> 
                             <div className="col-md-10">
                               <div className="modal-header">
                                 <h5 className="modal-title" id="exampleModalLabel">{data['name']}</h5>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
                               </div>
                               <div className="modal-body">
                                 <p>{Parser(data['field_description'])}</p>
@@ -82,12 +90,7 @@ class Capabilities extends Component {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                )
-              })
-            }
-            </OwlCarousel> : ""}
+                )})}    
             </div>
           </div>
         </div>

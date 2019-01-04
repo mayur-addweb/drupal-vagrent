@@ -14,7 +14,7 @@ class Header extends Component {
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto topnav">
-                    <li className="nav-item active">
+                    <li className="nav-item">
                         <AnchorLink className="nav-link" href='#industries'>INDUSTRIES<span className="sr-only">(current)</span></AnchorLink>
                     </li>
                     <li className="nav-item">

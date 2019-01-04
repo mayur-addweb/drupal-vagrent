@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
-//import login from './screens/login/App';
+//import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 import home from './screens/pages';
 import NotFound from './screens/dashboard/NotFound/NotFound'
 import './index.css';
@@ -10,7 +12,8 @@ import './vendor/select2/select2.min.css';
 import './vendor/css-hamburgers/hamburgers.min.css';
 import './vendor/animate/animate.css';
 import './fonts/font-awesome-4.7.0/css/font-awesome.min.css';
-import './vendor/bootstrap/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.js';
 import './css/style.scss';
 
 
