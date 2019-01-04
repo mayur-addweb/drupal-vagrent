@@ -71,7 +71,8 @@ class Capabilities extends Component {
                               </div>
                               <div className="modal-body">
                                 <p>{Parser(data['field_description'])}</p>
-                                <h3 className="modal-sub-heading">Portfolio : </h3>
+                                { data['field_banner_image'] ? <h3 className="modal-sub-heading">Portfolio</h3> : null }
+                                { data['field_banner_image'] ?
                                 <div className="portfolio-image-wrap">
                                   <div className="row">
                                     <div className="col-lg-6 col-md-6 col-xs-12">
@@ -84,6 +85,7 @@ class Capabilities extends Component {
                                     </div>
                                   </div>
                                 </div>
+                                : null}
                               </div>
                             </div>
                           </div>

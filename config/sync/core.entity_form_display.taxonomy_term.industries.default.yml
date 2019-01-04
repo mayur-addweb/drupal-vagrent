@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.industries.field_description
     - field.field.taxonomy_term.industries.field_icon_image
-    - field.field.taxonomy_term.industries.field_industries
+    - field.field.taxonomy_term.industries.field_portfolios
     - field.field.taxonomy_term.industries.field_tag
     - image.style.thumbnail
     - taxonomy.vocabulary.industries
@@ -42,7 +42,7 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
-  field_industries:
+  field_portfolios:
     weight: 34
     settings:
       match_operator: CONTAINS

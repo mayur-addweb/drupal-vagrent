@@ -1,28 +1,28 @@
-uuid: 8a7cca71-7e3c-4595-8120-a1ee07082595
+uuid: e998ca99-aa56-4720-ac6a-e3bf9413764b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_industries
+    - field.storage.taxonomy_term.field_portfolios
+    - node.type.portfolio
     - taxonomy.vocabulary.industries
-id: taxonomy_term.industries.field_industries
-field_name: field_industries
+id: taxonomy_term.industries.field_portfolios
+field_name: field_portfolios
 entity_type: taxonomy_term
 bundle: industries
-label: Industries
+label: Portfolios
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      industries: industries
+      portfolio: portfolio
     sort:
-      field: name
-      direction: asc
+      field: _none
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

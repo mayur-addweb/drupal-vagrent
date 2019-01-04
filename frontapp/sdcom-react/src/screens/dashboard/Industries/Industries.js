@@ -52,10 +52,10 @@ class Industries extends Component {
                         </div>
                         <div className="modal-body">
                           <p>{data['field_description']}</p>
-                          <h3 className="modal-sub-heading">Technologies Used : </h3>
+                          <h3 className="modal-sub-heading">Technologies Used</h3>
                           <p>{data['field_tag']}</p>
-                          <h3 className="modal-sub-heading">Portfolio : </h3>
-                          <p>{data['field_industries']}</p>
+                          <h3 className="modal-sub-heading">Portfolio</h3>
+                          <p>{data['field_portfolios']}</p>
                         </div>
                       </div>
                     </div>

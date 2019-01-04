@@ -65,19 +65,13 @@ class Portfolio extends Component {
                   <div className="row">
                     <div className="col-md-4">
                       <div className="line-right">
-                        <h3 className="modal-sub-heading">Technologies: </h3>
-                        <p>{sample['field_tags']}</p>
+                        <h3 className="modal-sub-heading">Technologies </h3>
+                        <p>{sample['field_capabilities']}</p>
                       </div>
                     </div>
                     <div className="col-md-4">
                       <div className="line-right">
-                        <h3 className="modal-sub-heading">Portfolio: </h3>
-                        <p>{sample['field_industries_tags']}</p>
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="line-right">
-                        <h3 className="modal-sub-heading">Industries : </h3>
+                        <h3 className="modal-sub-heading">Industries </h3>
                         <p>{sample['field_industries_tags']}</p>
                       </div>
                     </div>
