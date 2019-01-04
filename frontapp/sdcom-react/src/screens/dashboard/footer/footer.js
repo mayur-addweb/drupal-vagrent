@@ -11,6 +11,7 @@ class footer extends Component {
         this.varify = this.varify.bind(this);
         this.recaptchaLoaded = this.recaptchaLoaded.bind(this);
         this.verifyCallback = this.verifyCallback.bind(this);
+
         this.state = {
           email: "",
           name: "",
@@ -59,9 +60,11 @@ class footer extends Component {
             console.log(error);
           })
         });
+        event.preventDefault();
+        alert('Thanks for the submission!!');
       }
       else {
-        alert('varify you are human');
+        alert('verify you are human!!');
         event.preventDefault();
       }
     }
@@ -90,13 +93,13 @@ class footer extends Component {
               <div className="left-connect">
                 <form>
                   <div className="form-group">
-                    <input type="text" className="form-control" id="subject" placeholder="Subject" value={this.state.subject} onChange={this.handleChange} />
+                    <input type="text" className="form-control" required id="subject" placeholder="Subject" value={this.state.subject} onChange={this.handleChange} />
                   </div>
                   <div className="form-group">
-                    <input type="text" className="form-control" id="name" placeholder="Name" value={this.state.name} onChange={this.handleChange} />
+                    <input type="text" className="form-control" required id="name" placeholder="Name" value={this.state.name} onChange={this.handleChange} />
                   </div>
                   <div className="form-group">
-                    <input type="email" className="form-control" id="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
+                    <input type="email" className="form-control" required id="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} />
                   </div>
                   <div className="form-group">
                     <textarea className="form-control" id="description" rows="3" placeholder="Description" value={this.state.description} onChange={this.handleChange}></textarea>
@@ -117,7 +120,7 @@ class footer extends Component {
                 <h2 className="main-heading">LET'S CONNECT!</h2>
                 <div className="icon-wrap">
                   <i className="fa fa-twitter" aria-hidden="true"></i>
-                  <a href="https://twitter.com/sdhariwal" className="connect-url"><h4>Saurbh Dhariwal</h4></a>
+                  <a href="https://twitter.com/sdhariwal" target="_blank" rel="noopener noreferrer" className="connect-url"><h4>@sdhariwal</h4></a>
                 </div>
                 <div className="icon-wrap">
                   <i className="fa fa-envelope" aria-hidden="true"></i>

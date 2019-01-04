@@ -1,8 +1,14 @@
 jQuery(window).scroll(function(){
-    if (jQuery(window).scrollTop() >= 70) {
-        jQuery('header').addClass('fixed-header');
+  if ($(window).scrollTop() >= 70) {
+        $('header').addClass('fixed-header');
     }
     else {
-        jQuery('header').removeClass('fixed-header');
+        $('header').removeClass('fixed-header');
+    }
+    if ($(window).scrollTop() >= 400) {
+        $('header').addClass('fix-logo');
+    }
+    else {
+        $('header').removeClass('fix-logo');
     }
 });

@@ -64,6 +64,7 @@ class Capabilities extends Component {
                               <div className="icon-popup">
                                   <i className={data['field_capabilities_icon']} aria-hidden="true" data-toggle="modal"></i>
                               </div>
+                              <div className="dots"></div>
                             </div> 
                             <div className="col-md-10">
                               <div className="modal-header">

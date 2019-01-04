@@ -143,6 +143,7 @@
 
 .sd-about.after-right::after {
   margin-left: 100px;
+
 }
 
 .modal-title,
@@ -154,7 +155,6 @@
 /* banner (about-sd)*/
 .sd-about {
   position: relative;
-
   .col-md-6 {
     position: static;
   }
@@ -292,6 +292,19 @@
 /* industries */
 .industries-wrap {
   position: relative;
+  &:before {
+    position: absolute;
+    top: -43px;
+    left: 0;
+    display: inline-block;
+    height: 100px;
+    width: 100%;
+    background-image: url(../assets/image/shadow1.png);
+    content: '';
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .industries {
     cursor: pointer;
     img {
@@ -624,6 +637,7 @@
 /* blog section */
 .blog-wrap {
   position: relative;
+  padding-bottom: 70px;
   .vertical-name {
     transform: rotate(-90deg) translate(0, 75px);
   }
@@ -634,7 +648,7 @@
       cursor: pointer;
       .card-title {
         display: inline-block;
-        min-height: 72px;
+        min-height: 80px;
         font-size: 22px;
         font-weight: bold;
       }

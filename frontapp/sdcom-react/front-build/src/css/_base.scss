@@ -10,6 +10,7 @@ body {
   font-size: 16px;
   line-height: 23px;
   font-family: 'Open Sans';
+  background-color: $white;
   @media only screen and (max-width: 992px) {
     margin-top: 65px;
 
@@ -58,9 +59,12 @@ span:focus {
   outline: none;
 }
 section {
-  padding: 70px 0;
+  padding: 70px 0 0;
 }
 
+button:focus {
+  outline: none;
+}
 .left {
   left: 0;
 }

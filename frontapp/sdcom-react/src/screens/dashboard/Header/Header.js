@@ -11,7 +11,7 @@ class Header extends Component {
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-
+            <h3 className="uname">SAURABH DHARIWAL</h3>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto topnav">
                     <li className="nav-item">
@@ -21,7 +21,7 @@ class Header extends Component {
                         <AnchorLink className="nav-link" href='#portfolio'>PORTFOLIO</AnchorLink>
                     </li>
                     <li className="nav-item">
-                        <AnchorLink className="nav-link" href='#capabilities'>CAPABILITY</AnchorLink>
+                        <AnchorLink className="nav-link" href='#capabilities'>CAPABILITIES</AnchorLink>
                     </li>
                     <li className="nav-item">
                         <AnchorLink className="nav-link" href='#testimonial'>TESTIMONIALS</AnchorLink>

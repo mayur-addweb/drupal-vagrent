@@ -143,6 +143,7 @@
 
 .sd-about.after-right::after {
   margin-left: 100px;
+
 }
 
 .modal-title,
@@ -154,7 +155,6 @@
 /* banner (about-sd)*/
 .sd-about {
   position: relative;
-
   .col-md-6 {
     position: static;
   }
@@ -292,6 +292,19 @@
 /* industries */
 .industries-wrap {
   position: relative;
+  &:before {
+    position: absolute;
+    top: -43px;
+    left: 0;
+    display: inline-block;
+    height: 100px;
+    width: 100%;
+    background-image: url(../assets/image/shadow1.png);
+    content: '';
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .industries {
     cursor: pointer;
     img {
@@ -331,62 +344,25 @@
   }
 }
 
-
-/* portfolio*/
-.pink-block {
-  display: inline-block;
-  height: 50px;
-  width: 100%;
-  background-color: #FDF6F0;
-  content: '';
-}
-.green-block {
-  display: inline-block;
-  height: 50px;
-  width: 100%;
-  background-color: #F0FCF0;
-  content: '';
-}
-
 .portfolio-wrap {
   position: relative;
   .vertical-name {
-    transform: rotate(-90deg) translate(0, 170px);
+    transform: rotate(-90deg) translate(0, 165px);
   }
-  .grid-container .grid-item:nth-child(2) .card {
-    margin-top: 20px;
-    @media only screen and (max-width: 992px) {
-      margin-top: 0;
-    }
-  }
-  .grid-container .grid-item:nth-child(2)::before {
-    @extend .pink-block;
-    @media only screen and (max-width: 992px) {
-      display: none;
-    }
-  }
-  /*.row .col-lg-4:last-child:after {
-    @extend .green-block;
-  }*/
-  .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    @media only screen and (max-width: 992px) {
-      grid-template-columns: auto auto;
-    }
-    @media only screen and (max-width: 767px) {
-      grid-template-columns: auto;
-    }
-    .grid-item {
-      padding: 15px;
-    }
+  .row {
     .card {
-      margin-bottom: 0 !important;
       cursor: pointer;
       img {
-        /*max-height: 200px;*/
         height: 200px;
         max-width: 300px;
+        @media only screen and (max-width: 1200px) {
+          height: 150px;
+          max-width: 200px;
+        }
+        @media only screen and (max-width: 992px) {
+          height: 200px;
+          max-width: 300px;
+        }
       }
       .body-wrap {
         display: inline-block;
@@ -406,6 +382,13 @@
     .col-lg-4:nth-child(2n + 1) {
       .card {
         background-color: $sky-blue;
+      }
+    }
+    @media only screen and (max-width: 992px) {
+      .col-lg-4:nth-child(2n + 2) {
+        .card {
+          background-color: $sky-blue;
+        }
       }
     }
   }
@@ -574,9 +557,7 @@
 }
 
 /* logo slider */
-.owl-carousel {
-  display: inline-block !important;
-}
+
 .capailities-wrap {
   .logo-slider {
     padding: 80px 0;
@@ -811,7 +792,7 @@
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
-    @media only screen and (max-width: 992px) {
+    @media only screen and (max-width: 1080px) {
       font-size: 18px;
     }
   }

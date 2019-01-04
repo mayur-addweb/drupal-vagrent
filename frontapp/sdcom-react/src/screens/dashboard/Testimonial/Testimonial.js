@@ -28,8 +28,8 @@ class Testimonial extends Component {
 return (
   <section className="testimonial-wrap text-center" id="testimonial">
     <div className="container">
-    <h2 className="main-heading">TESTIMONIAL</h2>
-    <h3 className="vertical-name left">TESTIMONIAL</h3>
+    <h2 className="main-heading">TESTIMONIALS</h2>
+    <h3 className="vertical-name left">TESTIMONIALS</h3>
 
     {this.state.testimonial_data.length > 0 ?
       <OwlCarousel
