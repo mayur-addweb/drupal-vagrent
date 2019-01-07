@@ -648,7 +648,7 @@
       cursor: pointer;
       .card-title {
         display: inline-block;
-        min-height: 80px;
+        min-height: 8p0x;
         font-size: 22px;
         font-weight: bold;
       }
@@ -803,4 +803,11 @@ footer {
   padding: 15px 0;
 }
 
-
+.ReactModal__Overlay { 
+  z-index: 999;
+}
+.ReactModal__Content {
+  max-width: 500px; 
+  width: 100%;
+  min-height: 400px;
+}
