@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import Parser from 'html-react-parser';
-import axios from 'axios';
 import config from '../../config/config';
+import {axios_get} from '../../config/config'
+
 
 
 class Capabilities extends Component {
@@ -13,13 +14,15 @@ class Capabilities extends Component {
       capabilities_data: [],
       base_url: config.my_api
     }
-    axios.get(config.my_api + '/capabilities/rest?_format=json').then((res) => {
-      this.setState({capabilities_data: res.data});
-  
-    }).catch((error) => {
-      console.log(error);
-    })
   }
+
+    // Get the data for the capabilities
+    async componentWillMount() {
+      const end_point = '/capabilities/rest?_format=json';
+      this.setState({
+        capabilities_data: await axios_get(this.state.base_url, end_point)
+      })    
+    }
 
   render() {
     return (

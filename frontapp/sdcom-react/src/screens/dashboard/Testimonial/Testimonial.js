@@ -3,7 +3,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import config from '../../config/config';
-import axios from 'axios';
+import {axios_get} from '../../config/config'
 
 
 class Testimonial extends Component {
@@ -14,18 +14,18 @@ class Testimonial extends Component {
       testimonial_data: [],
       base_url: config.my_api
     }
-    axios.get(config.my_api + '/testimonial/rest?_format=json').then((res) => {
-      this.setState({testimonial_data: res.data});
-  
-    }).catch((error) => {
-      console.log(error);
-    })
   }
-
   
-  render() {
-    
-return (
+   // Get the data for the testimonial
+   async componentWillMount() {
+    const end_point = '/testimonial/rest?_format=json';
+    this.setState({
+      testimonial_data: await axios_get(this.state.base_url, end_point)
+    })    
+  }
+  
+render() {
+  return (
   <section className="testimonial-wrap text-center" id="testimonial">
     <div className="container">
     <h2 className="main-heading">TESTIMONIALS</h2>

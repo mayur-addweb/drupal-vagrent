@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 import config from '../../config/config';
+import {axios_get} from '../../config/config'
 
 class Blog extends Component {
 
@@ -13,12 +11,14 @@ class Blog extends Component {
       blog_data: [],
       base_url: config.my_api
     }
-    axios.get(config.my_api + '/blog/rest?_format=json').then((res) => {
-      this.setState({blog_data: res.data});
-    }).catch((error) => {
-      console.log(error);
-    })
-
+  }
+  
+  // Get the data for the blogs
+  async componentWillMount() {
+    const end_point = '/blog/rest?_format=json';
+    this.setState({
+      blog_data: await axios_get(this.state.base_url, end_point)
+    })    
   }
   
 
@@ -39,7 +39,7 @@ class Blog extends Component {
               items:3
           }
       }
-  }
+    }
 
     return (
       <section className="blog-wrap carousel slider carousel-multi-item" data-ride="carousel" id="blog">

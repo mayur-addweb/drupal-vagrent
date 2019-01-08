@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from '../../config/config';
-import axios from 'axios';
+import {axios_get} from '../../config/config'
+
 
 
 class Industries extends Component {
@@ -11,13 +12,15 @@ class Industries extends Component {
         industries_data: [],
         base_url: config.my_api
       }
-      axios.get(config.my_api + '/industries/rest?_format=json').then((res) => {
-        this.setState({industries_data: res.data});   
-      }).catch((error) => {
-        console.log(error);
-      })
-
     }
+
+   // Get the data for the industries
+  async componentWillMount() {
+    const end_point = '/industries/rest?_format=json';
+    this.setState({
+      industries_data: await axios_get(this.state.base_url, end_point)
+    })    
+  }
 
   render() {
     return (
