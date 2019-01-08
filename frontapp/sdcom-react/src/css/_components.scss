@@ -827,12 +827,10 @@ footer {
   z-index: 999;
 }
 .ReactModal__Content {
-  min-height: 400px;
-  max-width: 500px;
+  max-width: 500px; 
   width: 100%;
+  min-height: 300px;
 }
-
-
 
 .ReactModal__Content {
   position: absolute;
@@ -852,6 +850,9 @@ footer {
   @extend .popup-shadow;
   img {
     display: inline-block;
+    border-radius: 50%;
+    margin: 0 0 20px;
+    border-radius: 50%;
     height: 150px;
     @extend .popup-shadow;
   }
