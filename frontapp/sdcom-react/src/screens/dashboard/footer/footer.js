@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import submitImg from '../../../assets/image/yes.png';
 import config from '../../config/config';
 import Loading from '../Spinner/LoadingSpinner';
 import axios from 'axios';
@@ -180,7 +181,6 @@ class footer extends Component {
       }
     };
     
-
     return (
         <div className="contact-us bg-blue text-center" id="connect">
         <div className="container-fluid">
@@ -188,6 +188,7 @@ class footer extends Component {
             <div className="col-md-7">
               <div className="left-connect">
                 <form id="modal-open">
+                <h2>Have a query or suggestion<br/>I’m all ears!</h2>
                   <div className="form-group text-left">
                     <input type="text"  className="form-control" required id="subject" placeholder="Subject" value={this.state.subject} onChange={this.handleChange} />
                     <span style={{color: "red"}}>{this.state.errors["subject"]}</span>
@@ -225,6 +226,7 @@ class footer extends Component {
                     <div class="cross-wrap">
                       <button onClick={this.closeModal} class="close cross-btn"><span>X</span></button>
                     </div>
+                    <img src={submitImg} alt="submission-img"/>
                     <h2>Thanks for the submission</h2>
                   </Modal>              
               </div>
