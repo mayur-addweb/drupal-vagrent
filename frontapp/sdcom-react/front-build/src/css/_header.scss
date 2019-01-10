@@ -59,17 +59,17 @@
   .uname {
     /*display: none;*/
     height: 0;
-    visibility: hidden;
-    opacity: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+    opacity: 0;
+    visibility: hidden;
     @include prefix(transition, .5s ease 0s all);
   }
   &.fix-logo {
     .uname {
       /*display: block;*/
       height: auto;
-      visibility: visible;
       opacity: 1;
+      visibility: visible;
     }
   }
 }

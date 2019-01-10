@@ -47,8 +47,8 @@ $(document).ready(function() {
   $(".portfolio-wrap .card-title").click(function(ev) {
      ev.stopPropagation();
   });
-});
 
+});
 
 $(window).scroll(function(){
     if ($(window).scrollTop() >= 70) {
@@ -64,3 +64,4 @@ $(window).scroll(function(){
         $('header').removeClass('fix-logo');
     }
 });
+

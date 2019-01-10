@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import config from '../../config/config';
+import Loading from '../Spinner/Loader';
 import {axios_get} from '../../config/config'
+import { browserHistory } from 'react-router';
 
 class Blog extends Component {
 
@@ -9,8 +11,13 @@ class Blog extends Component {
     super(props)
     this.state ={
       blog_data: [],
-      base_url: config.my_api
+      base_url: config.my_api,
+      loading: true
     }
+  }
+
+  blogsListing =() => {
+    browserHistory.push('/blogs')
   }
   
   // Get the data for the blogs
@@ -19,8 +26,10 @@ class Blog extends Component {
     this.setState({
       blog_data: await axios_get(this.state.base_url, end_point)
     })    
+    if(this.state.blog_data) {
+      this.setState({loading: false});
+    }
   }
-  
 
   render() {
 
@@ -42,50 +51,55 @@ class Blog extends Component {
     }
 
     return (
-      <section className="blog-wrap carousel slider carousel-multi-item" data-ride="carousel" id="blog">
-      <div className="container">
-        <h2 className="main-heading">BLOGS</h2>
-        <h2 className="vertical-name right">BLOGS</h2>
-        <div className="blog-slider">
-          {this.state.blog_data.length > 0 ?
-            <OwlCarousel
-            className="owl-theme"
-            loop
-            margin={15}
-            items={3}
-            nav={true}
-            dots={false}
-            {...options}
-            >
-          { 
-            this.state.blog_data.map((sample,index) => {
-              return(
-          <div className="item" key={index}>
-            <div className="card">
-              <div className="view overlay img-effect img-wave">
-              <a href={sample['field_blog_url']}><img src={config.my_api + sample['field_blog_image']} className="img-fluid" alt="" target='_blank' rel="noopener noreferrer"/></a>
-              </div>
-              <div className="card-body">
-                <a href={sample['field_blog_url']} target='_blank' rel="noopener noreferrer"><h4 className="card-title">{sample['title']}</h4></a>
-                <div className="auth-info center-wrapper">
-                  <img src={config.my_api + sample['field_author_img']} className="auth-img" alt="blog"/>
-                  <div className="auth-name">{sample['field_blog_author']}</div>
-                </div>
-                <div className="publish-info">
-                  <span>{sample['field_blog_date']}</span>
-                  <span></span>
-                </div>
-              </div>
-            </div>
-          </div>
-              )}
-            )
-          }
-          </OwlCarousel> : ""}
-        </div>
-      </div>
-    </section>
-  
+      <div>
+      {this.state.loading ? <Loading/> : 
+    <section className="blog-wrap carousel slider carousel-multi-item" data-ride="carousel" id="blog">
+     <div className="container">
+     <h2 className="main-heading">BLOGS</h2>
+     <h2 className="vertical-name right">BLOGS</h2>
+     <div className="blog-slider">
+       {this.state.blog_data.length > 0 ?
+         <OwlCarousel
+         className="owl-theme"
+         loop
+         margin={15}
+         items={3}
+         nav={true}
+         dots={false}
+         {...options}
+         >
+       { 
+         this.state.blog_data.map((data,index) => {
+           return(
+       <div className="item" key={index}>
+         <div className="card">
+           <div className="view overlay img-effect img-wave">
+           <a href={data['field_blog_url']}><img src={config.my_api + data['field_blog_image']} className="img-fluid" alt="" target='_blank' rel="noopener noreferrer"/></a>
+           </div>
+           <div className="card-body">
+             <a href={data['field_blog_url']} target='_blank' rel="noopener noreferrer"><h4 className="card-title">{data['title']}</h4></a>
+             <div className="auth-info center-wrapper">
+               <img src={config.my_api + data['field_author_img']} className="auth-img" alt="blog"/>
+               <div className="auth-name">{data['field_blog_author']}</div>
+             </div>
+             <div className="publish-info">
+               <span>{data['field_blog_date']}</span>
+               <span></span>
+             </div>
+           </div>
+         </div>
+       </div>
+           )}
+         )
+       }
+       </OwlCarousel> : ""}
+       <button class="btn btn-primary" onClick={this.blogsListing}>View More</button>
+     </div>
+   </div>
+   </section>
+      }
+  </div>
+    
     );
   }
 }

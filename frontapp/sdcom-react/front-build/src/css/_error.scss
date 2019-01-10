@@ -1,0 +1,40 @@
+
+.not-found {
+  padding: 250px 0;
+  text-align: center;
+  @media only screen and (max-width: 767px){
+    padding: 200px 0;
+  }
+  @media only screen and (max-width: 580px){
+    padding: 130px 0;
+  }
+  h1 {
+    display: inline-block;
+    color: #2264FF;
+    font-size: 170px;
+    font-weight: bold;
+  }
+  img {
+    display: inline-block;
+    height: 140px;
+    width: 140px;
+    margin-bottom: 70px;
+    opacity: .4;
+  }
+  .error {
+    display: inline-block;
+    width: 100%;
+    p {
+      display: inline-block;
+      color: #2264FF;
+      font-size: 60px;
+      line-height: 75px;
+      font-weight: bold;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+

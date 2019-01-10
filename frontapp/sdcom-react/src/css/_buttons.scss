@@ -25,4 +25,7 @@
   font-weight: 600;
   letter-spacing: 0;
   @include prefix('border-radius', 10px);
+  &:focus {
+    box-shadow: none;
+  }
 }

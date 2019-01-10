@@ -6,11 +6,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,700i,800');
 
 body {
+  background-color: $white;
   color: $dark-grey;
   font-size: 16px;
   line-height: 23px;
   font-family: 'Open Sans';
-  background-color: $white;
   @media only screen and (max-width: 992px) {
     margin-top: 65px;
 
@@ -53,6 +53,10 @@ body {
 
 .box-shadow {
   @include prefix('box-shadow', rgb(000, 000, 000) 0 3px 34px);
+}
+
+.popup-shadow {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
 span:focus {
