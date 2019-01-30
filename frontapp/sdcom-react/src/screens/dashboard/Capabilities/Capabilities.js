@@ -18,9 +18,9 @@ class Capabilities extends Component {
 
     // Get the data for the capabilities
     async componentWillMount() {
-      const end_point = '/capabilities/rest?_format=json';
+      //const end_point = '/capabilities/rest?_format=json';
       this.setState({
-        capabilities_data: await axios_get(this.state.base_url, end_point)
+        capabilities_data: await axios_get(config.base, '/capabilities')
       })    
     }
 

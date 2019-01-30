@@ -22,9 +22,9 @@ class Blog extends Component {
   
   // Get the data for the blogs
   async componentWillMount() {
-    const end_point = '/blog/rest?_format=json';
+    //const end_point = '/blog/rest?_format=json';
     this.setState({
-      blog_data: await axios_get(this.state.base_url, end_point)
+      blog_data: await axios_get(config.base, '/blog')
     })    
     if(this.state.blog_data) {
       this.setState({loading: false});
@@ -93,7 +93,7 @@ class Blog extends Component {
          )
        }
        </OwlCarousel> : ""}
-       <button class="btn btn-primary" onClick={this.blogsListing}>View More</button>
+       <button className="btn btn-primary" onClick={this.blogsListing}>View More</button>
      </div>
    </div>
    </section>

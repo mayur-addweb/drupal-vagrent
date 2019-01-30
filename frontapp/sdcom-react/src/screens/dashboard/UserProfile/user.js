@@ -20,8 +20,8 @@ constructor(props) {
       profiles: []
     };
 
-    axios.get(config.my_api + '/user/rest?_format=json').then(res => {
-
+    axios.get(config.base + '/user').then(res => {
+      
         this.setState({userData:res.data[0]});
         this.setState({profiles:res.data[0]['field_profile_links'].split(',')});
         this.setState({company:res.data[0]['field_company']});

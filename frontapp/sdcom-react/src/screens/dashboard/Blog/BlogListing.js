@@ -21,9 +21,9 @@ class BlogListing extends Component {
   
   // Get the data for the blogs
   async componentWillMount() {
-    const end_point = '/blog/rest?_format=json';
+   // const end_point = '/blog/rest?_format=json';
     this.setState({
-      blog_data: await axios_get(this.state.base_url, end_point)
+      blog_data: await axios_get(config.base, '/blog')
     })    
     if(this.state.blog_data) {
       this.setState({loading: false});
