@@ -3,6 +3,7 @@ import config from '../../config/config';
 import {axios_get} from '../../config/config'
 import Loading from '../Spinner/Loader';
 import { browserHistory } from 'react-router';
+import Parser from 'html-react-parser';
 
 class BlogListing extends Component {
 
@@ -53,13 +54,13 @@ class BlogListing extends Component {
                 <a href={data['field_blog_url']} className="blog-heading" target="_blank" rel="noopener noreferrer">{data['title']}</a>
               </div>
               <div className="blog-desc">
-                <p>There are many variations of passages of Lorem Ipsum available..</p>
+              {Parser(data['body'])}
                 <a href={data['field_blog_url']} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Read More</a>
               </div>
             </div>
             <div className="blog-main-bootom auth-info center-wrapper">
-              <img src={config.my_api + data['field_author_img']} className="auth-img" alt="auth-img"/>
-              <p className="auth-name">{data['field_blog_author']}</p>
+              <img src={config.my_api + data['user_picture']} className="auth-img" alt="auth-img"/>
+              <p className="auth-name">{data['field_first_name'] + ' ' + data['field_last_name']}</p>
               
               <div className="publish-info">
                 {data['field_blog_date']}

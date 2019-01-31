@@ -28,23 +28,23 @@ class Portfolio extends Component {
           <h3 className="vertical-name right">PORTFOLIO</h3>
           <div className="row">
             {
-            this.state.portfolio_data.map((sample, index) => (
+            this.state.portfolio_data.map((data, index) => (
               <div key={index} className="col-lg-4 col-md-6 col-xs-12">
-              <div className="card card-body mb-4 text-center" data-toggle="modal" data-target={'#portfolio' + sample['nid']}>
-                <img src={config.my_api + sample['field_banner_image']} alt="portfolio"/>
+              <div className="card card-body mb-4 text-center" data-toggle="modal" data-target={'#portfolio' + data['nid']}>
+                <img src={config.my_api + data['field_banner_image']} alt="portfolio"/>
                 <div className="body-wrap">
-                  <a href={sample['field_portfolio_url']} target='_blank' rel="noopener noreferrer"><h4 className="card-title">{sample['title']}</h4></a>
-                  <p className="card-text">{sample['body']}</p>
+                  <a href={data['field_portfolio_url']} target='_blank' rel="noopener noreferrer"><h4 className="card-title">{data['title']}</h4></a>
+                  <p className="card-text">{data['body']}</p>
                 </div>
               </div>
-              <div className="modal fade popup-modal show in" id={'portfolio' + sample['nid']} tabIndex="-1" role="dialog" aria-labelledby="ModalPortfolio" aria-hidden="true">
+              <div className="modal fade popup-modal show in" id={'portfolio' + data['nid']} tabIndex="-1" role="dialog" aria-labelledby="ModalPortfolio" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                   <div className="modal-content">
                     <div className="row">
                       <div className="col-md-12">
                         <div className="cross-img">
                           <div className="icon-popup">
-                            <img src={config.my_api + sample['field_logo']} alt="portfolio"/>
+                            <img src={config.my_api + data['field_banner_image']} alt="portfolio"/>
                           </div>
                           <div className="cross-wrap">
                             <button type="button" className="close cross-btn" data-dismiss="modal" aria-label="Close">
@@ -53,27 +53,27 @@ class Portfolio extends Component {
                           </div>
                         </div> 
                         <div className="modal-image">
-                          <img src={config.my_api + sample['field_banner_image']} alt="portfolio"/>
+                          <img src={config.my_api + data['field_banner_image']} alt="portfolio"/>
                         </div>
                         <div className="dots">
                         </div>          
                         <div className="modal-header">
-                          <h2 className="modal-title" id="exampleModalLabel">{sample['title']}</h2>
+                          <h2 className="modal-title" id="exampleModalLabel">{data['title']}</h2>
                         </div>
                         <div className="modal-body">
-                          <p>{sample['body_1']}</p>
+                          <p>{data['body_1']}</p>
                         <div className="technology-used-wrap">
                         <div className="row">
                           <div className="col-md-4">
                             <div className="line-right">
                               <h3 className="modal-sub-heading">Technologies </h3>
-                              <p>{sample['field_capabilities']}</p>
+                              <p>{data['field_capabilities']}</p>
                             </div>
                           </div>
                           <div className="col-md-4">
                             <div className="line-right">
                               <h3 className="modal-sub-heading">Industries </h3>
-                              <p>{sample['field_industries_tags']}</p>
+                              <p>{data['field_industries_tags']}</p>
                             </div>
                           </div>
                         </div>

@@ -29,8 +29,10 @@ content:
     region: content
 hidden:
   field_banner_image: true
+  field_capabilities: true
   field_industries: true
   field_industries_tags: true
   field_logo: true
+  field_portfolio_url: true
   field_tags: true
   field_technologies: true

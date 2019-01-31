@@ -31,4 +31,5 @@ hidden:
   field_author_company: true
   field_author_designation: true
   field_author_image: true
+  field_author_img: true
   field_author_name: true

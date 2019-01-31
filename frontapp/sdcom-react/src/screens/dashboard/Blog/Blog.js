@@ -79,8 +79,8 @@ class Blog extends Component {
            <div className="card-body">
              <a href={data['field_blog_url']} target='_blank' rel="noopener noreferrer"><h4 className="card-title">{data['title']}</h4></a>
              <div className="auth-info center-wrapper">
-               <img src={config.my_api + data['field_author_img']} className="auth-img" alt="blog"/>
-               <div className="auth-name">{data['field_blog_author']}</div>
+               <img src={config.my_api + data['user_picture']} className="auth-img" alt="blog"/>
+               <div className="auth-name">{data['field_first_name'] + ' ' + data['field_last_name']}</div>
              </div>
              <div className="publish-info">
                <span>{data['field_blog_date']}</span>

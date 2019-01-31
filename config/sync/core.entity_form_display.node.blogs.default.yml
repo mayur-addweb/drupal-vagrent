@@ -4,8 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.blogs.body
-    - field.field.node.blogs.field_author_img
-    - field.field.node.blogs.field_blog_author
+    - field.field.node.blogs.field_author_reference
     - field.field.node.blogs.field_blog_date
     - field.field.node.blogs.field_blog_image
     - field.field.node.blogs.field_blog_url
@@ -37,21 +36,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_author_img:
-    weight: 127
+  field_author_reference:
+    weight: 129
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
-  field_blog_author:
-    weight: 123
-    settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: entity_reference_autocomplete
     region: content
   field_blog_date:
     weight: 124
