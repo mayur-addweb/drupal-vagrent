@@ -3,7 +3,7 @@ import axios from 'axios';
 // Set the site wide keys
 export default {
     my_api: "https://sdcom.addwebprojects.com",
-    base: "http://localhost:3300",
+    base: "http://45.55.34.87:3300",
     recptcha_key: "6LeOboYUAAAAABUCnte067huZKgYKD8gpYnIzjEf"
 }
 
