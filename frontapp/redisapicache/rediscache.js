@@ -7,6 +7,7 @@ const { URL } = require("url");
 const redis = require("redis");
 const fetch = require("node-fetch");
 const TTL = 36000;
+const BASEURL = 'https://api.saurabhdhariwal.com/';
 
 let connectionString = process.env.COMPOSE_REDIS_URL;
 
@@ -40,7 +41,7 @@ app.use(function(req, res, next) {
       } else {
         console.log("Cache missed for ");
         fetch(
-            "https://sdcom.addwebprojects.com/" + keyWord +  "/rest?_format=json"
+            BASEURL + keyWord +  "/rest?_format=json"
         )
           .then(res => res.json())
           .then(json => {
