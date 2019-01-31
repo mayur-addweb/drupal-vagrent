@@ -6,7 +6,7 @@ const app = express();
 const { URL } = require("url");
 const redis = require("redis");
 const fetch = require("node-fetch");
-const TTL = 300;
+const TTL = 36000;
 
 let connectionString = process.env.COMPOSE_REDIS_URL;
 
