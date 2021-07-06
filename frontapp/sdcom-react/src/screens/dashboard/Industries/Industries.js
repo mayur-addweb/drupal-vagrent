@@ -18,7 +18,7 @@ class Industries extends Component {
   async componentWillMount() {
     //const end_point = '/industries/rest?_format=json';
     this.setState({
-      industries_data: await axios_get(config.base, '/industries')
+      industries_data: await axios_get(config.base, 'industries/rest')
     })    
   }
 

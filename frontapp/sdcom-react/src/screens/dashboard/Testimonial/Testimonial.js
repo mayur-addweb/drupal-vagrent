@@ -20,7 +20,7 @@ class Testimonial extends Component {
    async componentWillMount() {
     //const end_point = '/testimonial/rest?_format=json';
     this.setState({
-      testimonial_data: await axios_get(config.base, '/testimonial')
+      testimonial_data: await axios_get(config.base, 'testimonial/rest')
     })    
   }
   
