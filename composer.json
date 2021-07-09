@@ -24,6 +24,7 @@
         "drupal/contact_message_rest": "^1.0@alpha",
         "drupal/core": "^8.6.0",
         "drupal/cors": "^1.0",
+        "drupal/csp": "^1.15",
         "drupal/graphql": "^3.0@RC",
         "drupal/jwt": "^1.0@alpha",
         "drupal/link_attributes": "^1.5",
