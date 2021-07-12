@@ -2,8 +2,8 @@ import axios from 'axios';
 
 // Set the site wide keys
 export default {
-    my_api: "http://sd.lndo.site/",
-    base: "http://sd.lndo.site/",
+    my_api: "https://api.saurabhdhariwal.com",
+    base: "https://redis.saurabhdhariwal.com",
     recptcha_key: "6LeOboYUAAAAABUCnte067huZKgYKD8gpYnIzjEf"
 }
 

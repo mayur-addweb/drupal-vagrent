@@ -16,7 +16,7 @@ class Portfolio extends Component {
   async componentWillMount() {
           //const end_point = '/portfolio/rest?_format=json';
           this.setState({
-            portfolio_data: await axios_get(config.base, 'portfolio/rest')
+            portfolio_data: await axios_get(config.base, '/portfolio')
           })    
         }
 

@@ -24,7 +24,7 @@ class Blog extends Component {
   async componentWillMount() {
     //const end_point = '/blog/rest?_format=json';
     this.setState({
-      blog_data: await axios_get(config.base, 'blog/rest')
+      blog_data: await axios_get(config.base, '/blog')
     })    
     if(this.state.blog_data) {
       this.setState({loading: false});
